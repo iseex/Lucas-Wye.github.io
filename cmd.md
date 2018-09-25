@@ -89,8 +89,8 @@ git rm test.txt
 git commit -m ''
 *创建远程*
 ssh-keygen -t rsa -C "229559117@qq.com"
-git remote add origin git@github.com:Lustrew/notebook.git
 *推送至github*
+git remote add origin git@github.com:Lustrew/notebook.git
 git push -u origin master
 git push origin master
 *克隆*
