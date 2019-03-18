@@ -1,21 +1,32 @@
-#matlab相关
-*无图形界面启动*
+# matlab相关
+无图形界面启动
+```shell
 matlab -nosplash -nodesktop
-*查看工作区变量*
+```
+查看工作区变量
+```matlab
 whos
+```
 
-#软件安装相关
-*安装*
-sudo dpkg -i + filename
-*查看已经安装的包*
+# 软件安装相关
+安装
+```shell
+sudo dpkg -i filename
+```
+查看已经安装的包
+```shell
 sudo dpkg -l
 sudo dpkg -r filename
-*删除包*
-sudo apt-get --purge remove +包
+```
+删除包
+```shell
+sudo apt-get --purge remove package_name
 sudo apt autoremove
 sudo apt-get autoclean
+```
 
-#文件处理命令
+# 文件处理命令
+```shell
 mkdir 目录名         => 创建一个目录
 rmdir 空目录名      => 删除一个空目录
 rm 文件名 文件名   => 删除一个文件或多个文件
@@ -27,84 +38,90 @@ mv dir1 dir2    => 若目录 dir2 存在，则将目录 dir1，及其所有文�
 nautilus dir => 终端中打开文件夹
 sudo chmod 777 文件夹    修改文件夹权限
 sudo chmod 755 ./test.sh  #使脚本具有执行权限
-
+```
 #系统相关
-*修改环境变量*
+修改环境变量
+```shell
 sudo gedit ~/.profile
 source ~/.profile
-*访问C盘*
+```
+访问C盘
+```shell
 sudo ntfsfix /dev/sda3
-*查看字体*
+```
+查看字体
+```shell
 fc-list :lang=zh-cn
 Shutdown -h now #立马关机
 Shutdown -h 20:25 #系统会在今天20:25关机
 Shutdown -r now #系统立马重启
 Shutdown -r +10 #系统十分钟后重启
-
-
-
+```
 
 #python
+```shell
 pip3 list
 python -m pydoc -p 1234
-*tensorflow安装*
+```shell
+# tensorflow安装
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple/ --upgrade tensorflow 
-#配置gedit
-*添加插件*
-sudo apt-get install gedit-plugins
-*gedit找不到外部工具的解决方案*
-sudo chown YOUR_USERNAME /home/YOUR_USERNAME/.config/gedit
-
-
-#安装校园网配置
-sudo dpkg -i xl2tpd.deb
-*配置:*
-sudo vpn-connect -c
-*按照提示操作, 注意用户名后面的@a不要漏掉了*
-*#连接:*
-sudo vpn-connect
-*断开:*
-sudo vpn-connect -d
-*禁止更新*
-echo " xl2tpd hold" | dpkg --set-selections
+```
 
 #git操作
-*创建空仓库：*
+创建空仓库
+```shell
 git init
-*添加文件*
+```
+添加文件
+```shell
 git add filename
 git commit -m 说明
 *-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。*
+```
+```shell
 git status
 git diff
 git log
-*版本回退*
+```
+版本回退
+```shell
 上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
 git reset --hard HEAD^
-*记录*
+```
+记录
+```shell
 git reflog
-*删除*
+```
+删除
+```shell
 rm test.txt
 git rm test.txt
 git commit -m ''
-*创建远程*
-ssh-keygen -t rsa -C "229559117@qq.com"
-*推送至github*
-git remote add origin git@github.com:Lustrew/notebook.git
-
+```
+创建远程
+```shell
+ssh-keygen -t rsa -C "xxxxxxxxx@xx.com"
+```
+推送至github
+```shell
+git remote add origin git@github.com:xxx/xxx.git
+```
 第一次推送
-
+```shell
 git push -u origin master
+```
 后续推送
-
+```shell
 git push origin master
-*克隆*
-git clone git@github.com:shicai/Caffe_Manual.git
-
+```
+克隆
+```shell
+git clone git@github.com:xxx/xxx.git
+```
 
 
 # Vim
-
+```python
 i → Insert 模式，按 ESC 回到 Normal 模式.
 x → 删当前光标所在的一个字符。
 :wq → 存盘 + 退出 (:w 存盘, :q 退出)   （陈皓注：:w 后可以跟文件名）
@@ -141,3 +158,4 @@ qa 把你的操作记录在寄存器 a,于是 @a 会replay被录制的宏, @@ �
 <C-w> : 切换分屏。
 <C-w>_ : 减小尺寸 
 <C-w>+ : 增加尺寸
+```
