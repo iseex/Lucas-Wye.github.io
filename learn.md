@@ -1,6 +1,6 @@
 # Unix
 
-修改环境变量
+## 修改环境变量
 ```shell
 sudo vim ~/.bash_profile
 source ~/.bash_profile
@@ -11,11 +11,7 @@ source ~/.bash_profile
 # ~/.profile 
 # ~/.bashrc 
 ```
-访问C盘
-```shell
-sudo ntfsfix /dev/sda3
-```
-查看字体
+## 查看字体
 ```shell
 fc-list :lang=zh-cn
 Shutdown -h now #立马关机
@@ -24,7 +20,7 @@ Shutdown -r now #系统立马重启
 Shutdown -r +10 #系统十分钟后重启
 ```
 
-mac的terminal操作
+## mac的terminal操作
 
 ```shell
 单词为单位移动：option+方向键
@@ -37,13 +33,13 @@ mac的terminal操作
 
 
 
-#git操作
+# git操作
 
-创建空仓库
+### 创建空仓库
 ```shell
 git init
 ```
-添加文件
+### 添加文件
 ```shell
 git add filename
 git commit -m 说明
@@ -54,38 +50,38 @@ git status
 git diff
 git log
 ```
-版本回退
+### 版本回退
 ```shell
 上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
 git reset --hard HEAD^
 ```
-记录
+### 记录
 ```shell
 git reflog
 ```
-删除
+### 删除
 ```shell
 rm test.txt
 git rm test.txt
 git commit -m ''
 ```
-创建远程
+### 创建远程
 ```shell
 ssh-keygen -t rsa -C "xxxxxxxxx@xx.com"
 ```
-推送至github
+### 推送至github
 ```shell
 git remote add origin git@github.com:xxx/xxx.git
 ```
-第一次推送
+### 第一次推送
 ```shell
 git push -u origin master
 ```
-后续推送
+### 后续推送
 ```shell
 git push origin master
 ```
-克隆
+### 克隆
 ```shell
 git clone git@github.com:xxx/xxx.git
 ```
