@@ -1,49 +1,15 @@
-# matlab相关
-无图形界面启动
-```shell
-matlab -nosplash -nodesktop
-```
-查看工作区变量
-```matlab
-whos
-```
+#Unix
 
-# 软件安装相关
-安装
-```shell
-sudo dpkg -i filename
-```
-查看已经安装的包
-```shell
-sudo dpkg -l
-sudo dpkg -r filename
-```
-删除包
-```shell
-sudo apt-get --purge remove package_name
-sudo apt autoremove
-sudo apt-get autoclean
-```
-
-# 文件处理命令
-```shell
-mkdir 目录名         => 创建一个目录
-rmdir 空目录名      => 删除一个空目录
-rm 文件名 文件名   => 删除一个文件或多个文件
-rm -rf 非空目录名 => 删除一个非空目录下的一切
-touch 文件名        => 创建一个空文件
-mv file1 file2    => 将文件 file1，更改文件名为 file2。
-mv file1 dir1    => 将文件 file1，移到目录 dir1下，文件名仍为 file1。
-mv dir1 dir2    => 若目录 dir2 存在，则将目录 dir1，及其所有文件和子目录，移到目录 dir2 下，新目录名称为 dir1。若目录 dir2 不存在，则将dir1，及其所有文件和子目录，更改为目录 dir2
-nautilus dir => 终端中打开文件夹
-sudo chmod 777 文件夹    修改文件夹权限
-sudo chmod 755 ./test.sh  #使脚本具有执行权限
-```
-#系统相关
 修改环境变量
 ```shell
-sudo gedit ~/.profile
-source ~/.profile
+sudo vim ~/.bash_profile
+source ~/.bash_profile
+# /etc/profile 
+# /etc/paths 
+# ~/.bash_profile 
+# ~/.bash_login 
+# ~/.profile 
+# ~/.bashrc 
 ```
 访问C盘
 ```shell
@@ -58,16 +24,21 @@ Shutdown -r now #系统立马重启
 Shutdown -r +10 #系统十分钟后重启
 ```
 
-#python
+mac的terminal操作
+
 ```shell
-pip3 list
-python -m pydoc -p 1234
-```shell
-# tensorflow安装
-pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple/ --upgrade tensorflow 
+单词为单位移动：option+方向键
+清除至当前行尾：ctrl+k
+光标移到行首：ctrl+a
+       行末：ctrl+e
+清楚当前行：ctrl+u
+
 ```
 
+
+
 #git操作
+
 创建空仓库
 ```shell
 git init
@@ -120,8 +91,10 @@ git clone git@github.com:xxx/xxx.git
 ```
 
 
+
 # Vim
-```python
+
+```txt
 i → Insert 模式，按 ESC 回到 Normal 模式.
 x → 删当前光标所在的一个字符。
 :wq → 存盘 + 退出 (:w 存盘, :q 退出)   （陈皓注：:w 后可以跟文件名）
