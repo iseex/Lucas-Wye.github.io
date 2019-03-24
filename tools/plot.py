@@ -2,7 +2,7 @@
 
 ''' 
   author: Zewen-Ye
-  time: 2019.03.20
+  time: 2019-03-20
   function: read csv file and plot data 
 '''
 
