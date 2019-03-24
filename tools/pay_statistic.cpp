@@ -1,3 +1,9 @@
+/*
+  author: Zewen-Ye
+  time: 2019-03-24
+  function: this code is used to record payment.
+*/
+
 #include<iostream>
 #include<fstream>
 using namespace std;
