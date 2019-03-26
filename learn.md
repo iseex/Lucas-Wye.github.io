@@ -381,10 +381,30 @@ git push -u origin master
 ### 后续推送
 ```shell
 git push origin master
+git push
 ```
 ### 克隆
 ```shell
 git clone git@github.com:xxx/xxx.git
+```
+### pull
+```shell
+git pull # 用于从另一个存储库或本地分支获取并集成(整合)。git pull命令的作用是：取回远程主机某个分支的更新，再与本地的指定分支合并杂。
+# git pull <远程主机名> <远程分支名>:<本地分支名>
+
+git pull origin next:master
+# 取回origin主机的next分支，与本地的master分支合并
+
+git pull origin next
+# 远程分支(next)与当前分支合并，则冒号后面的部分可以省略
+
+git pull origin
+# 当前分支与远程分支存在追踪关系，git pull就可以省略远程分支名。
+
+git pull
+# 如果当前分支只有一个追踪分支，连远程主机名都可以省略。
+
+
 ```
 
 # Network
@@ -443,7 +463,11 @@ gcc -Ipathname
 gcc -Dsymbol # define preprocessor symbol
 gcc -Ldirectory # add directory to the library search path
 gcc -lxyz # link with library libxyz.a or libxyz.so
+```
 
+# gdb
+
+```shell
 gdb a.out # debug
 list
 br 8 # breakpoint in line 8
@@ -454,6 +478,8 @@ where
 help
 quit
 ```
+
+
 
 # Make
 
@@ -481,4 +507,31 @@ $@
 # The name of the current target.
 $?
 # The list of dependencies that are newer than the target.
+```
+
+# ssh
+安装 *SSH(Secure Shell)* 服务以提供远程管理服务 
+```shell
+sudo apt install ssh
+```
+启动ssh服务
+```shell
+/etc/init.d/ssh start
+```
+检测是否已启动
+```shell
+ps -e | grep ssh
+```
+
+SSH远程登录
+```shell
+ssh username@192.168.0.1
+```
+将*文件/文件夹*从远程机*下载*到本地(scp) 
+```shell
+scp -r username@192.168.0.1:/home/username/remotefile.txt
+```
+将*文件/文件夹*从本地*推送*到远程机(scp) 
+```shell
+scp -r localfile.txt username@192.168.0.1:/home/username/
 ```
