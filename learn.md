@@ -313,7 +313,7 @@ Shutdown -r +10 #系统十分钟后重启
 | :n | move to next file |
 | :rew | 回到第一个文件 |
 
-## I/O Redirection and Piping
+## (7)I/O Redirection and Piping
 
 > * stdin: 0
 > * stdout: 1
@@ -321,16 +321,16 @@ Shutdown -r +10 #系统十分钟后重启
 
 | key                 | function             |
 | --------            | -----:               |
-| >,>!,>/| | stdout重定向到file |
+| >,>!,>/| stdout重定向到file |
 | >> | stdout重定向到file(不覆盖) |
 | < | stdin从file重定向 |
-| | | 管道 |
+| \| | 管道 |
 | tee | 复制stdout |
 | >/dev/null | 扔掉输出 |
 | 2>file | stderr to file |
 | >file 2>&1 | redirect stdout and stderr to file |
 | >>file 2>&1 | append stdout and stderr to file |
-| 2>&1/|command | pipe stdout and stderr to command |
+| 2>&1/|command |
 | command>outfile 2>errfile | 分离stdout, stderr到file |
 
 
@@ -479,9 +479,9 @@ help
 quit
 ```
 
+[more of gdb](https://blog.csdn.net/gatieme/article/details/51671430)
 
-
-# Make
+# make
 
 #### Predefined Macros
 用make -p 查看

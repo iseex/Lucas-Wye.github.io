@@ -1,10 +1,8 @@
 #coding=utf-8
 '''
-
   author: Zewen-Ye
   time: 2019-03-24
   function: this code is used to read an image and save RGB data to outfile
-
 '''
 
 import sys

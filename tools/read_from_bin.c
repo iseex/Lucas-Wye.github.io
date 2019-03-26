@@ -1,7 +1,7 @@
 /*
   author: Zewen-Ye
   time: 2019-03-24
-  function: function: this code is used to read the RGBA data from a binary file 
+  function: this code is used to read the RGBA data from a binary file 
 */
 
 #include<stdio.h>
