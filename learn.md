@@ -517,6 +517,7 @@ sudo apt install ssh
 启动ssh服务
 ```shell
 /etc/init.d/ssh start
+sudo service ssh start
 ```
 检测是否已启动
 ```shell
