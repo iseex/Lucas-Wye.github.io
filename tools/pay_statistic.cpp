@@ -1,6 +1,6 @@
 /*
-  author: Zewen-Ye
-  time: 2019-03-24
+  author: lustre
+  time: 2019-04-24
   function: this code is used to record payment.
 */
 
@@ -12,6 +12,7 @@ int main(int argc, char *argv[]){
 
   if(argc != 3){ 
     cerr << "Usage: ./pay_statistic outfile time" << endl;
+    cerr << "Example: ./pay_statistic lustre_payment_record 2019.03" << endl;
     return 1;
   }
 
@@ -41,8 +42,8 @@ int main(int argc, char *argv[]){
   ofstream out;
   out.open(argv[1]);
 
-  out << "########################"  << endl;
-  out << "Report for " << argv[2] << endl;
+  out << "------------------------"  << endl;
+  out << "### Report for "  << argv[2]  << "\n```C" << endl;
   out << "[0]livelihood:  " << money[0] << endl;
   out << "[1]campus card: " << money[1] << endl;
   out << "[2]breakfast:   " << money[2] << endl;
@@ -51,7 +52,10 @@ int main(int argc, char *argv[]){
   out << "[5]snacks:      " << money[5] << endl;
   out << "[6]traffic:     " << money[6] << endl;
   out << "[7]game&play:   " << money[7] << endl;
-  out << "########################"  << endl;
+  out << "//----------------------"  << endl;
+  out << "total:          " << money[0] + money[1] + money[2] + money[3] +
+                               money[4] + money[5] + money[6] + money[7] << endl;
+  out << "```"  << endl;
 
   out.close();
 

@@ -1,6 +1,6 @@
 #coding=utf-8
 ''' 
-  author: Zewen-Ye
+  author: lustre
   time: 2019-03-20
   function: read csv file and plot data 
 '''

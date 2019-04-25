@@ -1,6 +1,6 @@
 #coding=utf-8
 '''
-  author: Zewen-Ye
+  author: lustre
   time: 2019-03-24
   function: this code is used to read the RGBA data from a binary file and then plot the image
 '''
