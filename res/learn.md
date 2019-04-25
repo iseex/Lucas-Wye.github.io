@@ -174,7 +174,7 @@ Shutdown -r +10 #系统十分钟后重启
 
 ```
 
-## (6)Vi
+## (6)vi
 
 #### 1.Basic
 
@@ -403,8 +403,6 @@ git pull origin
 
 git pull
 # 如果当前分支只有一个追踪分支，连远程主机名都可以省略。
-
-
 ```
 
 # Network
@@ -433,7 +431,11 @@ ip # TCP/IP interface configuration and routing utility
 ifconfig # configure a network interface
 route # show / manipulate the IP routing table
 netstat # show network status (network connections, routing tables, interface statistics, masquerade connections, and multicast memberships)
+
+sudo ping ip地址 -i 0.01 -s 65500 # 每0.01秒给ip地址对应的机器发送65500字节的数据包
 ```
+
+
 
 ## (3)Useful Remote Connection Utilities
 
@@ -536,3 +538,6 @@ scp -r username@192.168.0.1:/home/username/remotefile.txt
 ```shell
 scp -r localfile.txt username@192.168.0.1:/home/username/
 ```
+
+
+
