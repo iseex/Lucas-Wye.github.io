@@ -1,8 +1,5 @@
 ## Here are some useful programs.
 
-### [pay_statistic.cpp](./pay_statistic.cpp)
-useful tool for payment record.
-
 ### [read_from_bin.c](./read_from_bin.c)
 read the RGBA data from a binary file.
 

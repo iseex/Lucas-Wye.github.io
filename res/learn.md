@@ -539,5 +539,23 @@ scp -r username@192.168.0.1:/home/username/remotefile.txt
 scp -r localfile.txt username@192.168.0.1:/home/username/
 ```
 
+# tmux
+[参考](https://www.jianshu.com/p/48b5b61e1c38)
+
+```shell
+# 终端环境查看会话列表
+tmux ls 
+
+# 垂直分屏
+ctrl+b % 
+
+# 水平分屏
+ctrl+b " 
+
+# 根据按箭方向选择切换到某个pane。
+ctrl+b Up|Down|Left|Right 
+# 滚屏
+# 要进入copy-mode，即PREFIX+[，然后就可以用上下键来滚动屏幕，配置了vi快捷键模式，就可以像操作vi一样来滚动屏幕，非常的方便。退出直接按‘q’键即可。
+```
 
 
