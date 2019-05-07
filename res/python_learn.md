@@ -1,6 +1,6 @@
 - [伯乐在线资源频道](http://hao.jobbole.com/)
-  - 《[Scrapy：Python 的爬虫框架](http://hao.jobbole.com/python-scrapy/)》
-  - 《[Flask：一个使用 Python 编写的轻量级 Web 应用框架](http://hao.jobbole.com/flask/)》
+- 《[Scrapy：Python 的爬虫框架](http://hao.jobbole.com/python-scrapy/)》
+- 《[Flask：一个使用 Python 编写的轻量级 Web 应用框架](http://hao.jobbole.com/flask/)》
 
 
 ## 资源列表
