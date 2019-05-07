@@ -1,5 +1,4 @@
-- 基于 awesome-python 列表，我们将对其中的各个资源项进行编译整理。此外还将从其他来源补充好资源。
-- 整理后的内容，将收录在[伯乐在线资源频道](http://hao.jobbole.com/)。可参考已整理的内容：
+- [伯乐在线资源频道](http://hao.jobbole.com/)
   - 《[Scrapy：Python 的爬虫框架](http://hao.jobbole.com/python-scrapy/)》
   - 《[Flask：一个使用 Python 编写的轻量级 Web 应用框架](http://hao.jobbole.com/flask/)》
 

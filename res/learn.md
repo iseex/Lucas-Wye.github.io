@@ -176,7 +176,7 @@ Shutdown -r +10 #系统十分钟后重启
 
 ## (6)vi
 
-#### 1.Basic
+### 1.Basic
 
 | key                 | function             |
 | --------            | -----:               |
@@ -217,7 +217,8 @@ Shutdown -r +10 #系统十分钟后重启
 |^w_ | 减小尺寸 |
 | ^w+ | 增加尺寸 |
 
-#### 2. Cursor Movement
+### 2. Cursor Movement
+
 | key                 | function             |
 | --------            | -----:               |
 | hjkl  | move  |
@@ -234,7 +235,8 @@ Shutdown -r +10 #系统十分钟后重启
 | [n] b | back [n] word(s)  |
 | e | end of word  |
 
-#### 3. Cursor Movement by Matching
+### 3. Cursor Movement by Matching
+
 | key                 | function             |
 | --------            | -----:               |
 | f character      | forward to next this character |
@@ -243,7 +245,8 @@ Shutdown -r +10 #系统十分钟后重启
 | n and N      |  next matched |
 | %      |  match parentheses  |
 
-#### 4. Inserting Text
+### 4. Inserting Text
+
 | key                 | function             |
 | --------            | -----:               |
 | i | insert text before the cursor |
@@ -253,7 +256,8 @@ Shutdown -r +10 #系统十分钟后重启
 | o | open new line after current line |
 | O | open new line before current line |
 
-#### 5. Deleting Text
+### 5. Deleting Text
+
 | key                 | function             |
 | --------            | -----:               |
 | dd | delete current line|
@@ -264,7 +268,8 @@ Shutdown -r +10 #系统十分钟后重启
 | [n] x | delete [n] characters |
 | [n] X | delete previous [n] character (like backspace) |
 
-#### 6. Changing Commands 
+### 6. Changing Commands 
+
 | key                 | function             |
 | --------            | -----:               |
 | s/S  | substitute  |
@@ -280,7 +285,8 @@ Shutdown -r +10 #系统十分钟后重启
 | p  | put yanked or deleted text after cursor |
 | P  | put yanked or deleted text before cursor |
 
-#### 7.Command Line Mode
+### 7.Command Line Mode
+
 | key | function |
 | --------            | -----:               |
 | :number |  跳到那一行 |
@@ -288,7 +294,7 @@ Shutdown -r +10 #系统十分钟后重启
 | :![cmd] | 暂时退出命令行执行cmd |
 | :set all | display all option settings  |
 | :[Addr]s/old expr/new string/[g] | 替换当前行/Addr的old expr为new string,[g]加上则替换所有的，否则只替换第一个 |
-#### 8. 正则表达式
+### 8. 正则表达式
 
 | key                 | function             |
 | --------            | -----:               |
@@ -307,7 +313,8 @@ Shutdown -r +10 #系统十分钟后重启
 | \ | treat the next character literally 转义字符 |
 | xy*z | xy开头，z结尾的字符串 |
 
-#### 9. More on vi
+### 9. More on vi
+
 | key                 | function             |
 | --------            | -----:               |
 | :n | move to next file |
@@ -333,14 +340,21 @@ Shutdown -r +10 #系统十分钟后重启
 | 2>&1/|command |
 | command>outfile 2>errfile | 分离stdout, stderr到file |
 
+## (8)阻止软件包更新
+
+https://blog.csdn.net/halazi100/article/details/41312729
+
+
 
 # git操作
 
-### 创建空仓库
+## 创建空仓库
+
 ```shell
 git init
 ```
-### 添加文件
+## 添加文件
+
 ```shell
 git add filename
 git commit -m 说明
@@ -351,43 +365,52 @@ git status
 git diff
 git log
 ```
-### 版本回退
+## 版本回退
+
 ```shell
 上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
 git reset --hard HEAD^
 ```
-### 记录
+## 记录
+
 ```shell
 git reflog
 ```
-### 删除
+## 删除
+
 ```shell
 rm test.txt
 git rm test.txt
 git commit -m ''
 ```
-### 创建远程
+## 创建远程
+
 ```shell
 ssh-keygen -t rsa -C "xxxxxxxxx@xx.com"
 ```
-### 推送至github
+## 推送至github
+
 ```shell
 git remote add origin git@github.com:xxx/xxx.git
 ```
-### 第一次推送
+## 第一次推送
+
 ```shell
 git push -u origin master
 ```
-### 后续推送
+## 后续推送
+
 ```shell
 git push origin master
 git push
 ```
-### 克隆
+## 克隆
+
 ```shell
 git clone git@github.com:xxx/xxx.git
 ```
-### pull
+## pull
+
 ```shell
 git pull # 用于从另一个存储库或本地分支获取并集成(整合)。git pull命令的作用是：取回远程主机某个分支的更新，再与本地的指定分支合并杂。
 # git pull <远程主机名> <远程分支名>:<本地分支名>
@@ -485,7 +508,8 @@ quit
 
 # make
 
-#### Predefined Macros
+## Predefined Macros
+
 用make -p 查看
 ```shell
 AS - assembler (as)
@@ -499,7 +523,8 @@ LDFLAGS - Linking option flags (e.g. –L /usr/share/lib)
 LDLIBS – Linking libraries (e.g. -lm)
 ```
 
-#### Special Internal Macros
+## Special Internal Macros
+
 ```shell
 $*
 # The basename of the current target
@@ -512,29 +537,35 @@ $?
 ```
 
 # ssh
-安装 *SSH(Secure Shell)* 服务以提供远程管理服务 
+## 安装 *SSH(Secure Shell)* 服务以提供远程管理服务 
+
 ```shell
 sudo apt install ssh
 ```
-启动ssh服务
+## 启动ssh服务
+
 ```shell
 /etc/init.d/ssh start
 sudo service ssh start
 ```
-检测是否已启动
+## 检测是否已启动
+
 ```shell
 ps -e | grep ssh
 ```
 
-SSH远程登录
+## SSH远程登录
+
 ```shell
 ssh username@192.168.0.1
 ```
-将*文件/文件夹*从远程机*下载*到本地(scp) 
+## 将*文件/文件夹*从远程机*下载*到本地(scp) 
+
 ```shell
 scp -r username@192.168.0.1:/home/username/remotefile.txt
 ```
-将*文件/文件夹*从本地*推送*到远程机(scp) 
+## 将*文件/文件夹*从本地*推送*到远程机(scp) 
+
 ```shell
 scp -r localfile.txt username@192.168.0.1:/home/username/
 ```
@@ -558,4 +589,15 @@ ctrl+b Up|Down|Left|Right
 # 要进入copy-mode，即PREFIX+[，然后就可以用上下键来滚动屏幕，配置了vi快捷键模式，就可以像操作vi一样来滚动屏幕，非常的方便。退出直接按‘q’键即可。
 ```
 
+
+
+# Android-adb
+
+## 卸载系统软件
+
+```shell
+adb shell
+pm list package
+pm uninstall -k --user 0 package_name
+```
 
