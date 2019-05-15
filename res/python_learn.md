@@ -2,82 +2,29 @@
 - 《[Scrapy：Python 的爬虫框架](http://hao.jobbole.com/python-scrapy/)》
 - 《[Flask：一个使用 Python 编写的轻量级 Web 应用框架](http://hao.jobbole.com/flask/)》
 
+## python打包成pyc
+```shell
+python -m py_compile filename.py
+```
 
 ## 资源列表
 
-### 环境管理
 
-管理 Python 版本和环境的工具
-
-*   p：非常简单的交互式 python 版本管理工具。[官网](https://github.com/qw3rtman/p)
-*   pyenv：简单的 Python 版本管理工具。[官网](https://github.com/yyuu/pyenv)
-*   Vex：可以在虚拟环境中执行命令。[官网](https://github.com/sashahart/vex)
-*   virtualenv：创建独立 Python 环境的工具。[官网](https://pypi.python.org/pypi/virtualenv)
-*   virtualenvwrapper：virtualenv 的一组扩展。[官网](https://pypi.python.org/pypi/virtualenvwrapper)
-
-### 包管理
-
-管理包和依赖的工具。
-
-*   pip：Python 包和依赖关系管理工具。[官网](https://pip.pypa.io/)
-*   pip-tools：保证 Python 包依赖关系更新的一组工具。[官网](https://github.com/nvie/pip-tools)
-*   pipenv：Python 官方推荐的新一代包管理工具。[官网](https://github.com/pypa/pipenv)
-*   poetry: 可完全取代 setup.py 的包管理工具。[官网](https://poetry.eustace.io)
-*   conda：跨平台，Python 二进制包管理工具。[官网](https://github.com/conda/conda/)
-*   Curdling：管理 Python 包的命令行工具。[官网](http://clarete.li/curdling/)
-*   wheel：Python 分发的新标准，意在取代 eggs。[官网](http://pythonwheels.com/)
-
-### 包仓库
-
-本地 PyPI 仓库服务和代理。
-
-*   [warehouse](https://pypi.org/)：下一代 PyPI。[官网](https://github.com/pypa/warehouse)
-*   bandersnatch：PyPA 提供的 PyPI 镜像工具。[官网](https://bitbucket.org/pypa/bandersnatch)
-*   devpi：PyPI 服务和打包/测试/分发工具。[官网](http://doc.devpi.net/)
-*   localshop：本地 PyPI 服务（自定义包并且自动对 PyPI 镜像）。[官网](https://github.com/mvantellingen/localshop)
 
 ### 分发
 
 打包为可执行文件以便分发。
 
-*   PyInstaller：将 Python 程序转换成独立的执行文件（跨平台）。[官网](https://github.com/pyinstaller/pyinstaller)
-*   dh-virtualenv：构建并将 virtualenv 虚拟环境作为一个 Debian 包来发布。[官网](http://dh-virtualenv.readthedocs.org/)
-*   Nuitka：将脚本、模块、包编译成可执行文件或扩展模块。[官网](http://nuitka.net/)
-*   py2app：将 Python 脚本变为独立软件包（Mac OS X）。[官网](http://pythonhosted.org/py2app/)
-*   py2exe：将 Python 脚本变为独立软件包（Windows）。[官网](http://www.py2exe.org/)
-*   pynsist：一个用来创建 Windows 安装程序的工具，可以在安装程序中打包 Python 本身。[官网](http://pynsist.readthedocs.org/)
-
-### 构建工具
-
-将源码编译成软件。
-
-*   buildout：一个构建系统，从多个组件来创建，组装和部署应用。[官网](http://www.buildout.org/)
-*   BitBake：针对嵌入式 Linux 的类似 make 的构建工具。[官网](http://www.yoctoproject.org/docs/1.6/bitbake-user-manual/bitbake-user-manual.html)
-*   fabricate：对任何语言自动找到依赖关系的构建工具。[官网](https://code.google.com/archive/p/fabricate)
-*   PlatformIO：多平台命令行构建工具。[官网](https://github.com/platformio/platformio)
-*   PyBuilder：纯 Python 实现的持续化构建工具。[官网](https://github.com/pybuilder/pybuilder)
-*   SCons：软件构建工具。[官网](http://www.scons.org/)
+*   [PyInstaller](https://github.com/pyinstaller/pyinstaller)：将 Python 程序转换成独立的执行文件（跨平台）。
+*   [dh-virtualenv](http://dh-virtualenv.readthedocs.org/)：构建并将 virtualenv 虚拟环境作为一个 Debian 包来发布。
+*   [Nuitka](http://nuitka.net/)：将脚本、模块、包编译成可执行文件或扩展模块。
+*   [py2exe](http://www.py2exe.org/)：将 Python 脚本变为独立软件包（Windows）。
 
 ### 交互式解析器
 
 交互式 Python 解析器。
 
-*   IPython：功能丰富的工具，非常有效的使用交互式 Python。[官网](https://github.com/ipython/ipython)
-*   [bpython](http://hao.jobbole.com/bpython/)：界面丰富的 Python 解析器。[官网](http://bpython-interpreter.org/)
-*   ptpython：高级交互式 Python 解析器， 构建于 [python-prompt-toolkit](https://github.com/jonathanslenders/python-prompt-toolkit) 之上。[官网](https://github.com/jonathanslenders/ptpython)
-
-### 文件
-
-文件管理和 MIME（多用途的网际邮件扩充协议）类型检测。
-
-*   aiofiles：基于 asyncio，提供文件异步操作。[官网](https://github.com/Tinche/aiofiles)
-*   imghdr：（Python 标准库）检测图片类型。[官网](https://docs.python.org/2/library/imghdr.html)
-*   mimetypes：（Python 标准库）将文件名映射为 MIME 类型。[官网](https://docs.python.org/2/library/mimetypes.html)
-*   path.py：对 os.path 进行封装的模块。[官网](https://github.com/jaraco/path.py)
-*   pathlib：（Python3.4+ 标准库）跨平台的、面向对象的路径操作库。[官网](https://pathlib.readthedocs.org/en/pep428/)
-*   python-magic：文件类型检测的第三方库 libmagic 的 Python 接口。[官网](https://github.com/ahupp/python-magic)
-*   Unipath：用面向对象的方式操作文件和目录。[官网](https://github.com/mikeorr/Unipath)
-*   watchdog：管理文件系统事件的 API 和 shell 工具。[官网](https://github.com/gorakhargosh/watchdog)
+*   [IPython](https://github.com/ipython/ipython)：功能丰富的工具，非常有效的使用交互式 Python。
 
 ### 日期和时间
 
@@ -319,11 +266,7 @@ Python 实现的数据库。
 
 用来连接和操作数据库的库。
 
-*   MySQL：[awesome-mysql](http://shlomi-noach.github.io/awesome-mysql/) 系列
-    *   aiomysql：基于 asyncio 的异步 MySQL 数据库操作库。[官网](https://github.com/aio-libs/aiomysql)
-    *   mysql-python：Python 的 MySQL 数据库连接器。[官网](https://sourceforge.net/projects/mysql-python/)
-    *   ysqlclient：[mysql-python](https://github.com/PyMySQL/mysqlclient-python) 分支，支持 Python 3。
-    *   oursql：一个更好的 MySQL 连接器，支持原生预编译指令和 BLOBs。[官网](https://pythonhosted.org/oursql/)
+*
     *   PyMySQL：纯 Python MySQL 驱动，兼容 mysql-python。[官网](https://github.com/PyMySQL/PyMySQL)
 *   PostgreSQL
     *   psycopg2：Python 中最流行的 PostgreSQL 适配器。[官网](http://initd.org/psycopg/)
