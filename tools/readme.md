@@ -12,5 +12,5 @@ read an image and save RGB data to outfile.
 ### [plot.py](./plot.py)
 read csv file and plot data graph.
 
-### [JpegCodecs](./JpegCodecs)
+### [JpegCodecs](https://github.com/Lustrew/notebook/tree/master/tools/JpegCodecs)
 a image process tool using C++ to convert jpeg file to bmp file.
