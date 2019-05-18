@@ -30,13 +30,14 @@
 
 ## (2)Bash
 
-> * login/logout:
+login/logout:
+
 ```shell
 login
 logout
 exit
 ```
-> * control key:  
+control key:  
 
 | key             |                                              function |
 | --------------- | ----------------------------------------------------: |
@@ -48,24 +49,27 @@ exit
 | ^D              |                                    signal end of file |
 | ^V              | treat following control character as normal character |
 
+verison of unix
 
-> * verison of unix
 ```shell
 uname 
 uname -a
 ```
 
-> * change password
+change password
+
 ```shell
 passwd
 ```
 
-> * date and time
+date and time
+
 ```shell
 date
 ```
 
-> * useful info
+useful info
+
 ```shell
 who
 who am i
@@ -77,7 +81,8 @@ alias # rename commane ( alias l='ls -CF')
 man # manual sections
 ```
 
-> * File Maintenance Commands
+File Maintenance Commands
+
 ```shell
 chmod # 
 chmod u+w file
@@ -95,18 +100,21 @@ umask # set in startup files for the account to masks out permissions.
 chgrp # change the group of the file
 chown # change the owner of a file
 ```
-> * link
+link
+
 ```shell
 ln #link to another file
 unlink #remove the link
 ```
 
-> * find and search
+find and search
+
 ```shell
 find 
 grep
 ```
-> * process and kill
+process and kill
+
 ```shell
 ps
 ps -l
@@ -117,7 +125,8 @@ uptime # tell how long the system has been running
 kill -9 processID
 ```
 
-> * If Conditions
+If Conditions
+
 ```shell
 -r return true (1) if it exists and is readable, otherwise return false (0)
 -w true if it exists and is writable
@@ -130,17 +139,33 @@ directory)
 -z true if the file has zero length (empty)
 ```
 
-> * Shell Startup
+Shell Startup
+
 ```shell
    Bash login shell executes order:  
    /etc/profile -> ~/.bash/_profile ->  ~/.bash_login -> ~/.profile. 
    Bash non-login shell executes:  
    /etc/bashrc and ~/.bashrc
 ```
-> * History Command
+History Command
+
 ```shell
 history
 ```
+
+查看cpu总占用率 
+
+```shell
+top -bn 1 -i -c 
+```
+
+删除ppa源,到源的目录
+
+```shell
+cd /etc/apt/sources.list.d/
+```
+
+可以看到关于源的文件,删除即可
 
 ## (3)修改环境变量
 
@@ -599,5 +624,24 @@ ctrl+b Up|Down|Left|Right
 adb shell
 pm list package
 pm uninstall -k --user 0 package_name
+```
+
+
+# 安全
+http://wiki.ioin.in
+https://wooyun.js.org
+http://blog.knownsec.com/Knownsec_RD_Checklist/
+
+
+
+# Java
+
+## 安装，添加环境变量
+
+```shell
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_144  # 这里换成自己的jdk目录
+export JRE_HOME=${JAVA_HOME}/jre  
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
+export PATH=${JAVA_HOME}/bin:$PATH 
 ```
 
