@@ -15,5 +15,3 @@ read csv file and plot data graph.
 ### [rc4.c](./rc4.c)
 encryption and decryption with rc4.
 
-### [JpegCodecs](https://github.com/Lustrew/notebook/tree/master/tools/JpegCodecs)
-a image process tool using C++ to convert jpeg file to bmp file.
