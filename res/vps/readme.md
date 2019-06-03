@@ -98,8 +98,8 @@ vi /etc/shadowsocks.json
 将该文件配置成下面这个样子，注意其中需要修改的地方，第一项 server 修改成vps的IP地址，第二项 server_port 可以不修改，但最好修改一下，修改后要记住这个端口，我们后面配置防火墙的时候要用到，第五项 password 修改成你的密码，其他东西不用修改。
 ```python
 {
-    "server":"my_server_ip",
-    "server_port":8388,
+    "server":"206.189.33.35",
+    "server_port":8798,
     "local_address": "127.0.0.1",
     "local_port":1080,
     "password":"mypassword",
@@ -119,7 +119,7 @@ ssserver -c /etc/shadowsocks.json -d stop
 最好在后台启动ss，这样可以继续进行后续配置  
 (4)防火墙添加shadowsocks端口
 ```shell
-firewall-cmd --add-port=8388/tcp --permanent
+firewall-cmd --add-port=8798/tcp --permanent
 ```
 这里要注意的是端口号8388要修改成上面配置文件中的端口号
 #### shadowsocks开机自启设置
@@ -128,10 +128,13 @@ firewall-cmd --add-port=8388/tcp --permanent
 easy_install supervisor
 ```
 (2)创建配置文件
-```shellecho_supervisord_conf > /etc/supervisord.conf
-​```shell
+```shell
+echo_supervisord_conf > /etc/supervisord.conf
+```
+
+
 修改配置文件
-​```shell
+```shell
 vi /etc/supervisord.conf
 ```
 在文件末尾加上：
@@ -154,6 +157,7 @@ supervisord
 chmod 777 /etc/rc.local
 ```
 这样ss开启自动后台运行就配置好了，然后在DigitalOcean控制面板中重新启动服务器。
+
 
 
 

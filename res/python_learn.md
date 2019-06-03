@@ -7,7 +7,9 @@
 python -m py_compile filename.py
 ```
 
-## 资源列表
+# 自动python格式化工具black
+
+https://black.readthedocs.io/en/stable/installation_and_usage.html
 
 
 
