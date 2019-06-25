@@ -8,9 +8,9 @@
     一键安装ss:
         ss-fly.sh -i|i|install
     一键卸载ss：
-	ss-fly.sh -uninstall
+	    ss-fly.sh -uninstall
     一键安装ssr:
-	ss-fly.sh -ssr
+	    ss-fly.sh -ssr
     显示ss链接:
         ss-fly.sh -sslink
     安装BBR加速：

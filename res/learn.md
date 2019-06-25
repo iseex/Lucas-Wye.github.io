@@ -92,10 +92,8 @@ r = 4
 w = 2
 x = 1
 
-
 umask # set in startup files for the account to masks out permissions. 
 # umask numbers added to desired permission number equals 7.
-
 
 chgrp # change the group of the file
 chown # change the owner of a file
@@ -191,11 +189,11 @@ Shutdown -r +10 #系统十分钟后重启
 ## (5)mac的terminal操作
 
 ```shell
-单词为单位移动：option+方向键
-清除至当前行尾：ctrl+k
-光标移到行首：ctrl+a
-       行末：ctrl+e
-清楚当前行：ctrl+u
+单词为单位移动： option+方向键
+清除至当前行尾： ctrl+k
+光标移到行首：  ctrl+a
+       行末：  ctrl+e
+清楚当前行：    ctrl+u
 
 ```
 
@@ -359,16 +357,20 @@ Shutdown -r +10 #系统十分钟后重启
 | \| | 管道 |
 | tee | 复制stdout |
 | >/dev/null | 扔掉输出 |
-| 2>file | stderr to file |
+| 1>file1 2>file2 | stdout to file1, stderr to file2 |
 | >file 2>&1 | redirect stdout and stderr to file |
 | >>file 2>&1 | append stdout and stderr to file |
-| 2>&1/|command |
-| command>outfile 2>errfile | 分离stdout, stderr到file |
+
 
 ## (8)阻止软件包更新
 
 https://blog.csdn.net/halazi100/article/details/41312729
 
+## (9)开机进入命令行
+```shell
+sudo systemctl set-default multi.user 
+# graph...
+```
 
 
 # git操作
@@ -383,7 +385,7 @@ git init
 ```shell
 git add filename
 git commit -m 说明
-*-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。*
+# -m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。
 ```
 ```shell
 git status
@@ -393,7 +395,7 @@ git log
 ## 版本回退
 
 ```shell
-上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
+# 上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
 git reset --hard HEAD^
 ```
 ## 记录
@@ -565,7 +567,7 @@ $?
 ## 安装 *SSH(Secure Shell)* 服务以提供远程管理服务 
 
 ```shell
-sudo apt install ssh
+sudo apt install openssh-server
 ```
 ## 启动ssh服务
 
@@ -614,8 +616,6 @@ ctrl+b Up|Down|Left|Right
 # 要进入copy-mode，即PREFIX+[，然后就可以用上下键来滚动屏幕，配置了vi快捷键模式，就可以像操作vi一样来滚动屏幕，非常的方便。退出直接按‘q’键即可。
 ```
 
-
-
 # Android-adb
 
 ## 卸载系统软件
@@ -626,13 +626,11 @@ pm list package
 pm uninstall -k --user 0 package_name
 ```
 
-
 # 安全
+
 http://wiki.ioin.in
 https://wooyun.js.org
 http://blog.knownsec.com/Knownsec_RD_Checklist/
-
-
 
 # Java
 

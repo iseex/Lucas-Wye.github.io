@@ -98,11 +98,11 @@ vi /etc/shadowsocks.json
 将该文件配置成下面这个样子，注意其中需要修改的地方，第一项 server 修改成vps的IP地址，第二项 server_port 可以不修改，但最好修改一下，修改后要记住这个端口，我们后面配置防火墙的时候要用到，第五项 password 修改成你的密码，其他东西不用修改。
 ```python
 {
-    "server":"206.189.33.35",
+    "server":"165.227.54.189",
     "server_port":8798,
     "local_address": "127.0.0.1",
     "local_port":1080,
-    "password":"mypassword",
+    "password":"google",
     "timeout":300,
     "method":"aes-256-cfb",
     "fast_open": false
