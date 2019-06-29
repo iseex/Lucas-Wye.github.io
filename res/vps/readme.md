@@ -69,7 +69,7 @@ vi /usr/lib/firewalld/services/ssh.xml
    　　<port protocol="tcp" port="22"/>
 　　</service>
 ```
-修改port="22"改为 port="xxx"即可。
+修改port="22"改为 port="xx"即可。
 
 修改后重载firewalld
 ```shell
@@ -98,7 +98,7 @@ vi /etc/shadowsocks.json
 将该文件配置成下面这个样子，注意其中需要修改的地方，第一项 server 修改成vps的IP地址，第二项 server_port 可以不修改，但最好修改一下，修改后要记住这个端口，我们后面配置防火墙的时候要用到，第五项 password 修改成你的密码，其他东西不用修改。
 ```python
 {
-    "server":"165.227.54.189",
+    "server":"",
     "server_port":8798,
     "local_address": "127.0.0.1",
     "local_port":1080,
@@ -157,12 +157,3 @@ supervisord
 chmod 777 /etc/rc.local
 ```
 这样ss开启自动后台运行就配置好了，然后在DigitalOcean控制面板中重新启动服务器。
-
-
-
-
-
-
-
-
-
