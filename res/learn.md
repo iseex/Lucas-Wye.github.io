@@ -179,7 +179,7 @@ source ~/.bash_profile
 ```
 ## (4)查看字体
 ```shell
-fc-list :lang=zh-cn
+fc-list:lang=zh-cn
 Shutdown -h now #立马关机
 Shutdown -h 20:25 #系统会在今天20:25关机
 Shutdown -r now #系统立马重启
@@ -187,15 +187,15 @@ Shutdown -r +10 #系统十分钟后重启
 ```
 
 ## (5)mac的terminal操作
+| function                 | key             |
+| --------            | -----:               |
+| 单词为单位移动 |  option+方向键|
+| 清除至当前行尾 | ctrl+k|
+| 光标移到行首 |  ctrl+a|
+|       行末 |  ctrl+e|
+| 清除当前行 |    ctrl+u|
 
-```shell
-单词为单位移动： option+方向键
-清除至当前行尾： ctrl+k
-光标移到行首：  ctrl+a
-       行末：  ctrl+e
-清楚当前行：    ctrl+u
 
-```
 
 ## (6)vi
 
@@ -368,8 +368,7 @@ https://blog.csdn.net/halazi100/article/details/41312729
 
 ## (9)开机进入命令行
 ```shell
-sudo systemctl set-default multi.user 
-# graph...
+sudo systemctl set-default multi.user # /graph...
 ```
 
 
@@ -414,6 +413,8 @@ git commit -m ''
 
 ```shell
 ssh-keygen -t rsa -C "xxxxxxxxx@xx.com"
+git config --global user.name "your name"
+git config --global user.email "your email"
 ```
 ## 推送至github
 
@@ -626,12 +627,6 @@ pm list package
 pm uninstall -k --user 0 package_name
 ```
 
-# 安全
-
-http://wiki.ioin.in
-https://wooyun.js.org
-http://blog.knownsec.com/Knownsec_RD_Checklist/
-
 # Java
 
 ## 安装，添加环境变量
@@ -642,4 +637,12 @@ export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
 export PATH=${JAVA_HOME}/bin:$PATH 
 ```
+
+# 安全相关
+
+http://wiki.ioin.in  
+https://wooyun.js.org  
+http://blog.knownsec.com/Knownsec_RD_Checklist/   
+
+ 
 
