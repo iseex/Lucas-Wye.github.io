@@ -23,3 +23,6 @@ Transform picture to RGB565 data. (only available in Windows)
 
 ### [md2html.py](./md2html.py)
 Convert markdown file to html file.
+
+### [Makefile.example](./Makefile.example)
+Useful makefile example.
