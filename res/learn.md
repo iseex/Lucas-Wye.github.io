@@ -1,6 +1,6 @@
 [TOC]
 
-# Unix
+# UNIX
 
 ## (1)File System
 ```shell
@@ -123,7 +123,7 @@ uptime # tell how long the system has been running
 kill -9 processID
 ```
 
-If Conditions
+If conditions
 
 ```shell
 -r return true (1) if it exists and is readable, otherwise return false (0)
@@ -145,7 +145,7 @@ Shell Startup
    Bash non-login shell executes:  
    /etc/bashrc and ~/.bashrc
 ```
-History Command
+History
 
 ```shell
 history
@@ -186,16 +186,14 @@ Shutdown -r now #系统立马重启
 Shutdown -r +10 #系统十分钟后重启
 ```
 
-## (5)mac的terminal操作
+## (5)Mac OS X的terminal操作
 | function                 | key             |
 | --------            | -----:               |
-| 单词为单位移动 |  option+方向键|
-| 清除至当前行尾 | ctrl+k|
 | 光标移到行首 |  ctrl+a|
-|       行末 |  ctrl+e|
+| 光标移到行末 |  ctrl+e|
 | 清除当前行 |    ctrl+u|
-
-
+| 清除至当前行尾 | ctrl+k|
+| 以单词为单位移动 |  option+方向键|
 
 ## (6)vi
 
@@ -240,7 +238,7 @@ Shutdown -r +10 #系统十分钟后重启
 |^w_ | 减小尺寸 |
 | ^w+ | 增加尺寸 |
 
-### 2. Cursor Movement
+### 2. Cursor movement
 
 | key                 | function             |
 | --------            | -----:               |
@@ -258,7 +256,7 @@ Shutdown -r +10 #系统十分钟后重启
 | [n] b | back [n] word(s)  |
 | e | end of word  |
 
-### 3. Cursor Movement by Matching
+### 3. Cursor movement by matching
 
 | key                 | function             |
 | --------            | -----:               |
@@ -268,7 +266,7 @@ Shutdown -r +10 #系统十分钟后重启
 | n and N      |  next matched |
 | %      |  match parentheses  |
 
-### 4. Inserting Text
+### 4. Inserting text
 
 | key                 | function             |
 | --------            | -----:               |
@@ -279,7 +277,7 @@ Shutdown -r +10 #系统十分钟后重启
 | o | open new line after current line |
 | O | open new line before current line |
 
-### 5. Deleting Text
+### 5. Deleting text
 
 | key                 | function             |
 | --------            | -----:               |
@@ -291,7 +289,7 @@ Shutdown -r +10 #系统十分钟后重启
 | [n] x | delete [n] characters |
 | [n] X | delete previous [n] character (like backspace) |
 
-### 6. Changing Commands 
+### 6. Changing commands 
 
 | key                 | function             |
 | --------            | -----:               |
@@ -308,7 +306,7 @@ Shutdown -r +10 #系统十分钟后重启
 | p  | put yanked or deleted text after cursor |
 | P  | put yanked or deleted text before cursor |
 
-### 7.Command Line Mode
+### 7.Command line mode
 
 | key | function |
 | --------            | -----:               |
@@ -317,7 +315,7 @@ Shutdown -r +10 #系统十分钟后重启
 | :![cmd] | 暂时退出命令行执行cmd |
 | :set all | display all option settings  |
 | :[Addr]s/old expr/new string/[g] | 替换当前行/Addr的old expr为new string,[g]加上则替换所有的，否则只替换第一个 |
-### 8. 正则表达式
+### 8. Regular expression
 
 | key                 | function             |
 | --------            | -----:               |
@@ -336,7 +334,7 @@ Shutdown -r +10 #系统十分钟后重启
 | \ | treat the next character literally 转义字符 |
 | xy*z | xy开头，z结尾的字符串 |
 
-### 9. More on vi
+### 9. Multi files
 
 | key                 | function             |
 | --------            | -----:               |
@@ -344,19 +342,20 @@ Shutdown -r +10 #系统十分钟后重启
 | :rew | 回到第一个文件 |
 
 ## (7)I/O Redirection and Piping
-
-> * stdin: 0
-> * stdout: 1
-> * stderr: 2  
+```shell
+stdin:  0
+stdout: 1
+stderr: 2  
+```
 
 | key                 | function             |
 | --------            | -----:               |
-| >,>!,>/| stdout重定向到file |
+| >   | stdout重定向到file |
 | >> | stdout重定向到file(不覆盖) |
 | < | stdin从file重定向 |
 | \| | 管道 |
 | tee | 复制stdout |
-| >/dev/null | 扔掉输出 |
+| >/dev/null | 直接扔掉stdout |
 | 1>file1 2>file2 | stdout to file1, stderr to file2 |
 | >file 2>&1 | redirect stdout and stderr to file |
 | >>file 2>&1 | append stdout and stderr to file |
@@ -368,11 +367,32 @@ https://blog.csdn.net/halazi100/article/details/41312729
 
 ## (9)开机进入命令行
 ```shell
-sudo systemctl set-default multi.user # /graph...
+sudo systemctl set-default multi.user 
+sudo systemctl set-default graph...
+```
+
+## (10)aria2
+### Install 
+Ubuntu
+`sudo apt-get install aria2`
+CentOs
+`yum install aria2`
+### Usage
+```shell
+# 在命令后附加地址即可
+aria2c "url"
+
+# 分段下载，利用 aria2 的分段下载功能可以加快文件的下载速度
+# 使用 2 个连接来下载该文件，s的参数值介于 1~5 之间
+aria2c -s 2 "url"  
+
+# 断点续传，在命令中使用 c 选项可以断点续传文件
+aria2c -c "url"
 ```
 
 
-# git操作
+
+# git
 
 ## 创建空仓库
 
@@ -386,10 +406,10 @@ git add filename
 git commit -m 说明
 # -m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。
 ```
+## 查看状态
 ```shell
 git status
 git diff
-git log
 ```
 ## 版本回退
 
@@ -400,6 +420,7 @@ git reset --hard HEAD^
 ## 记录
 
 ```shell
+git log
 git reflog
 ```
 ## 删除
@@ -407,9 +428,9 @@ git reflog
 ```shell
 rm test.txt
 git rm test.txt
-git commit -m ''
+git commit -m '...'
 ```
-## 创建远程
+## github创建远程
 
 ```shell
 ssh-keygen -t rsa -C "xxxxxxxxx@xx.com"
@@ -437,7 +458,7 @@ git push
 ```shell
 git clone git@github.com:xxx/xxx.git
 ```
-## pull
+## 拉取远程代码
 
 ```shell
 git pull # 用于从另一个存储库或本地分支获取并集成(整合)。git pull命令的作用是：取回远程主机某个分支的更新，再与本地的指定分支合并杂。
@@ -456,7 +477,10 @@ git pull
 # 如果当前分支只有一个追踪分支，连远程主机名都可以省略。
 ```
 
+
+
 # Network
+
 ## (1)IP Address(5 Classes)
 
 | key                 | function             |
@@ -486,8 +510,6 @@ netstat # show network status (network connections, routing tables, interface st
 sudo ping ip地址 -i 0.01 -s 65500 # 每0.01秒给ip地址对应的机器发送65500字节的数据包
 ```
 
-
-
 ## (3)Useful Remote Connection Utilities
 
 ```shell
@@ -505,6 +527,7 @@ communicate with host using telnet protocol
 ```
 
 
+
 # gcc 
 
 ```shell
@@ -518,7 +541,7 @@ gcc -Ldirectory # add directory to the library search path
 gcc -lxyz # link with library libxyz.a or libxyz.so
 ```
 
-# gdb
+## gdb
 
 ```shell
 gdb a.out # debug
@@ -534,9 +557,9 @@ quit
 
 [more of gdb](https://blog.csdn.net/gatieme/article/details/51671430)
 
-# make
+## make
 
-## Predefined Macros
+### Predefined Macros
 
 用make -p 查看
 ```shell
@@ -551,7 +574,7 @@ LDFLAGS - Linking option flags (e.g. –L /usr/share/lib)
 LDLIBS – Linking libraries (e.g. -lm)
 ```
 
-## Special Internal Macros
+### Special Internal Macros
 
 ```shell
 $*
@@ -564,7 +587,10 @@ $?
 # The list of dependencies that are newer than the target.
 ```
 
+
+
 # ssh
+
 ## 安装 *SSH(Secure Shell)* 服务以提供远程管理服务 
 
 ```shell
@@ -590,7 +616,7 @@ ssh username@192.168.0.1
 ## 将*文件/文件夹*从远程机*下载*到本地(scp) 
 
 ```shell
-scp -r username@192.168.0.1:/home/username/remotefile.txt
+scp -r username@192.168.0.1:/home/username/remotefile.txt .
 ```
 ## 将*文件/文件夹*从本地*推送*到远程机(scp) 
 
@@ -598,7 +624,10 @@ scp -r username@192.168.0.1:/home/username/remotefile.txt
 scp -r localfile.txt username@192.168.0.1:/home/username/
 ```
 
-# tmux
+
+
+# tmux分屏工具
+
 [参考](https://www.jianshu.com/p/48b5b61e1c38)
 
 ```shell
@@ -617,6 +646,8 @@ ctrl+b Up|Down|Left|Right
 # 要进入copy-mode，即PREFIX+[，然后就可以用上下键来滚动屏幕，配置了vi快捷键模式，就可以像操作vi一样来滚动屏幕，非常的方便。退出直接按‘q’键即可。
 ```
 
+
+
 # Android-adb
 
 ## 卸载系统软件
@@ -626,6 +657,8 @@ adb shell
 pm list package
 pm uninstall -k --user 0 package_name
 ```
+
+
 
 # Java
 
@@ -637,6 +670,8 @@ export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
 export PATH=${JAVA_HOME}/bin:$PATH 
 ```
+
+
 
 # 安全相关
 

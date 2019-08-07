@@ -17,14 +17,14 @@ func twoSum(nums []int, target int) []int {
 //twoSum2 两遍哈希表
 func twoSum2(nums []int, target int) []int {
 	m := make(map[int]int,len(nums))
-	for i,num :=range nums{
+	for i,num :=range nums {
 		m[num] = i
 	}
 
-	for i,num :=range nums{
+	for i,num :=range nums {
 		num2 := target-num
 		//遍历nums第二遍,num和num2可能相等
-		if j,ok := m[num2];ok && num2!=num{
+		if j,ok := m[num2]; ok && num2!=num {
 			return []int{i,j}
 		}
 	}
@@ -34,9 +34,10 @@ func twoSum2(nums []int, target int) []int {
 //twoSum3 一遍哈希表
 func twoSum3(nums []int, target int) []int {
 	m := make(map[int]int,len(nums))
-	for j,num2 :=range nums{
+	
+	for j,num2 := range nums {
 		num1 := target-num2
-		if i,ok := m[num1];ok{
+		if i,ok := m[num1]; ok {
 			return []int{i,j}
 		}else {
 			m[num2] = j
