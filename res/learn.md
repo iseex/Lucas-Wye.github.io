@@ -109,6 +109,7 @@ find and search
 
 ```shell
 find 
+find ./ -mtime 0 # 查找24小时内修改过的文件
 grep
 ```
 process and kill
@@ -149,6 +150,7 @@ History
 
 ```shell
 history
+!598 # 执行第598条命令
 ```
 
 查看cpu总占用率 
@@ -390,6 +392,15 @@ aria2c -s 2 "url"
 aria2c -c "url"
 ```
 
+## (11)terminal设置代理
+**终端配置代理**
+
+```shell
+export http_proxy=http://127.0.0.1:1087
+export https_proxy=http://127.0.0.1:1087
+```
+macOS默认监控本地的HTTP端口是 1087，而 Windows 版本的则是 1080，如果改过默认端口，就使用你指定的端口
+
 
 
 # git
@@ -476,6 +487,53 @@ git pull origin
 git pull
 # 如果当前分支只有一个追踪分支，连远程主机名都可以省略。
 ```
+
+## 删除git项目所有提交历史
+
+1.创建新分支（这个命名是基于当前所在分支新建一个赤裸裸的分支，没有任何的提交历史，但是当前分支的内容一应俱全。新建的分支，严格意义上说，还不是一个分支，因为HEAD指向的引用中没有commit值，只有在进行一次提交后，它才算得上真正的分支。）
+
+```shell
+git checkout --orphan latest_branch
+```
+2.添加所有文件
+```shell
+git add .
+```
+3.commit代码
+
+```shell
+git commit -m "xxx"
+```
+4.删除原来的master分支
+```shell
+git branch -D master
+```
+5.把当前分支重命名为master
+
+```shell
+git branch -m master
+```
+6.最后把代码推送到远程仓库（有些仓库有master分支保护，不允许强制push，需要在远程仓库项目里暂时把项目保护关掉才能推送）
+
+```shell
+git push -f origin master
+```
+## .git垃圾回收
+Git 仓库越来越臃肿
+### 仓库自身的增长
+​       大多数版本控制系统存储的是一组初始文件，以及每个文件随着时间的演进而逐步积累起来的差异；而 Git 则会把文件的每一个差异化版本都记录在案。这意味着，即使你只改动了某个文件的一行内容，Git 也会生成一个全新的对象来存储新的文件内容。   
+**对象碎片**
+如果你改动了一个很大的文件，git会为这个文件生成了一个很大的Blob 对象
+
+```shell
+cd .git
+du -ah    # 查看文件大小
+```
+**垃圾回收**
+```shell
+git gc --prune=now
+```
+实际上，并不需要手动调用 gc 命令。每当碎片对象过多，或者你向远端服务器发起推送的时候，git 就会自动执行一次打包过程。
 
 
 

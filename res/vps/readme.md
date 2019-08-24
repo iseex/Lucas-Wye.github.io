@@ -21,7 +21,7 @@ DigitalOcean的使用方法如下：
 访问[DigitalOcean](https://m.do.co/c/f102147ffdd1)注册账号(使用此链接注册能得到$10的代金券)
 
 ### (2)激活
-注册后，需要进行激活。激活有两种方式，一种是绑定信用卡，另一种是用paypal，都要交$5才能激活。推荐使用paypal，可以先注册一个[paypal](http://paypal.com)账号，绑定银行卡，充值$5后再解绑。  
+注册后，需要进行激活。激活有两种方式，一种是绑定信用卡，另一种是用paypal，都要交$5才能激活。推荐使用paypal，可以先注册一个[paypal](http://paypal.com)账号，绑定银行卡，充值​$5后再解绑。  
 
 ### (3)兑换优惠码
 在 Settings 里面的 Billing 会有一个兑换优惠码的地方。输入github教育优惠页面的DigitalOcean那里的优惠码即可。
@@ -35,10 +35,10 @@ DigitalOcean的使用方法如下：
 ![](5.png)   
 操作系统建议选Centos，版本就选择最新的就可以了，Centos是服务器系统的首选了，Ubuntu比较适合个人使用，在稳定性上Ubuntu不如Centos。关于节点的选择，San Francisco到大陆的网速很快，选择该节点最优。  
 SSHKey不是强制的，推荐配置一下，不然每次远程登录时都需要输入密码（这个密码会在服务器搭建完成后收到的邮件中，如果配置的SSH key就不会收到密码），点击New SSH key，得到如下：  
-![](6.png). 
-将自己电脑上的ssh公钥复制到上面输入框中，在下面的输入框中为其起一个名字即可。  
+![](6.png)将自己电脑上的ssh公钥复制到上面输入框中，在下面的输入框中为其起一个名字即可。  
 
-*获取电脑ssh公钥的方法*
+- 获取电脑ssh公钥的方法
+
 ```shell
 ssh-keygen # 然后按三次Enter
 cat ～/.ssh/id_rsa.pub
@@ -49,7 +49,7 @@ cat ～/.ssh/id_rsa.pub
 #### 连接
 在自己电脑上进行配置，首先，打开系统的终端或者cmd，使用ssh远程连接服务器。
 ```shell
-ssh root@[your vps ip address]
+ssh root@ip
 ```
 #### 配置防火墙
 ```shell
@@ -76,87 +76,77 @@ vi /usr/lib/firewalld/services/ssh.xml
 firewall-cmd --permanent --add-service=ssh
 firewall-cmd --reload
 ```
+#### 使用[v2ray](./v2ray.sh)安装
+##### 安装
+```shell
+bash v2ray.sh
+sudo vi /etc/v2ray/config.json
+```
+##### 修改配置文件
 
-#### 安装shadowsocks
-(1)安装pip
-```shell
-yum install m2crypto python-setuptools
-easy_install pip
-pip install shadowsocks
-```
-(2)启动shadowsocks
-```shell
-# 直接在前台启动shadowsocks
-ssserver -p 443 -k password -m aes-256-cfb
-# 在后台启动shadowsocks
-sudo ssserver -p 443 -k password -m aes-256-cfb --user nobody -d start
-```
-(3)推荐在通过配置文件启动ss，以下命令创建了shadowsocks.json文件，并用vi打开进行编辑
-```shell
-vi /etc/shadowsocks.json
-```
-将该文件配置成下面这个样子，注意其中需要修改的地方，第一项 server 修改成vps的IP地址，第二项 server_port 可以不修改，但最好修改一下，修改后要记住这个端口，我们后面配置防火墙的时候要用到，第五项 password 修改成你的密码，其他东西不用修改。
-```python
+```json
 {
-    "server":"xx.xx.xx.xx",
-    "server_port":8798,
-    "local_address": "127.0.0.1",
-    "local_port":1080,
-    "password":"google",
-    "timeout":300,
-    "method":"aes-256-cfb",
-    "fast_open": false
+  "inbounds": [
+    {
+      // 端口
+      "port": 443,   
+      "protocol": "shadowsocks",
+      "settings": {
+        // 加密方式
+        "method": "aes-256-gcm",
+        "ota": false,
+        // 密码
+        "password": "password"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",  
+      "settings": {}
+    }
+  ]
 }
 ```
 
-通过配置文件启动ss
-```shell
-# 后台启动
-ssserver -c /etc/shadowsocks.json -d start
-# 停止
-ssserver -c /etc/shadowsocks.json -d stop
+##### 启动v2ray
+
 ```
-最好在后台启动ss，这样可以继续进行后续配置  
-(4)防火墙添加shadowsocks端口
+sudo systemctl start v2ray
+```
+
+##### 查看v2ray工作状态
+
+```
+sudo systemctl status v2ray
+```
+
+如果显示如下所示说明v2ray已经成功启动：
+
+```shell
+● v2ray.service - V2Ray Service
+   Loaded: loaded (/etc/systemd/system/v2ray.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2018-12-18 11:15:33 EST; 1 day 19h ago
+ Main PID: 2986 (v2ray)
+   CGroup: /system.slice/v2ray.service
+           └─2986 /usr/bin/v2ray/v2ray -config /etc/v2ray/config.json
+
+Dec 18 11:15:33 xxxx systemd[1]: Started V2Ray Service.
+Dec 18 11:15:34 xxxx v2ray[2986]: V2Ray 4.8.0 (Po) 20181206
+Dec 18 11:15:34 xxxx v2ray[2986]: A unified platform for anti-censorship.
+Dec 18 11:15:34 xxxx v2ray[2986]: 2018/12/18 11:15:34 [Warning] v2ray.com/core: V2Ray 4.8.0 started
+```
+
+然后就可以在自己的客户端上输入对应的参数开始
+
+
+#### 防火墙添加shadowsocks端口
+
 ```shell
 firewall-cmd --add-port=8798/tcp --permanent
 ```
-这里要注意的是端口号8388要修改成上面配置文件中的端口号
-#### shadowsocks开机自启设置
-(1)安装supervisor
-```shell
-easy_install supervisor
-```
-(2)创建配置文件
-```shell
-echo_supervisord_conf > /etc/supervisord.conf
-```
+这里要注意的是端口号8798要修改成上面配置文件中的端口号
 
-
-修改配置文件
-```shell
-vi /etc/supervisord.conf
-```
-在文件末尾加上：
-```shell
-[program:ssserver]
-command = ssserver -c /etc/shadowsocks.json
-autostart=true
-autorestart=true
-```
-(3)设置supervisor开机自启
-```shell
-vi /etc/rc.local
-```
-在文件末尾另起一行，添加：
-```python
-supervisord
-```
-(4)为 rc.local 添加执行权限
-```shell
-chmod 777 /etc/rc.local
-```
-这样ss开启自动后台运行就配置好了，然后在DigitalOcean控制面板中重新启动服务器。
 
 
 
