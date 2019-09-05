@@ -79,7 +79,7 @@ firewall-cmd --reload
 #### 使用[v2ray](./v2ray.sh)安装
 ##### 安装
 ```shell
-bash v2ray.sh
+bash v2ray.shc
 sudo vi /etc/v2ray/config.json
 ```
 ##### 修改配置文件
@@ -89,14 +89,14 @@ sudo vi /etc/v2ray/config.json
   "inbounds": [
     {
       // 端口
-      "port": 443,   
+      "port": 2048,   
       "protocol": "shadowsocks",
       "settings": {
         // 加密方式
         "method": "aes-256-gcm",
         "ota": false,
         // 密码
-        "password": "password"
+        "password": "v2ray"
       }
     }
   ],
@@ -143,9 +143,9 @@ Dec 18 11:15:34 xxxx v2ray[2986]: 2018/12/18 11:15:34 [Warning] v2ray.com/core: 
 #### 防火墙添加shadowsocks端口
 
 ```shell
-firewall-cmd --add-port=8798/tcp --permanent
+firewall-cmd --add-port=5901/tcp --permanent
 ```
-这里要注意的是端口号8798要修改成上面配置文件中的端口号
+这里要注意的是端口号9999要修改成上面配置文件中的端口号
 
 
 
