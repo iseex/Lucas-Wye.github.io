@@ -19,47 +19,16 @@ package src
 //
 //中位数是 (2 + 3)/2 = 2.5
 
-//归并排序思路（O(min(m,n)))
-func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
-	l := len(nums1) + len(nums2)
-	if l == 0 {
-		panic("切片的长度为0，无法求解中位数。")
-	}
-
-	res := make([]int, 0, l)
-	//归并排序
-	i, j := 0, 0
-	for i < len(nums1) && j < len(nums2) {
-		if nums1[i] < nums2[j] {
-			res = append(res, nums1[i])
-			i++
-		} else {
-			res = append(res, nums2[j])
-			j++
-		}
-	}
-	if i >= len(nums1) {
-		res = append(res, nums2[j:]...)
-	}
-	if j >= len(nums2) {
-		res = append(res, nums1[i:]...)
-	}
-
-	if l%2 == 0 {
-		return float64(res[l/2]+res[l/2-1]) / 2.0
-	}
-	return float64(res[l/2])
-}
-
-//findMedianSortedArrays2 给出两个有序数组，假设两个数组的长度和是 len，如果 len 为奇数，那么我们求的就是两个数组合并后的第 (len >> 1) + 1 大的数，如果 len 为偶数，就是第 (len >> 1) 和 (len >> 1) + 1 两个数的平均数
+//findMedianSortedArrays 给出两个有序数组，假设两个数组的长度和是 len，
+// 如果 len 为奇数，那么我们求的就是两个数组合并后的第 (len >> 1) + 1 大的数，
+// 如果 len 为偶数，就是第 (len >> 1) 和 (len >> 1) + 1 两个数的平均数
 //  给定两个有序数组，求第k大数,如果我们从 A 和 B 中分别取前 k/2 个元素，其中必然有一部分是是在数组 C 的前 k 个数里
 //  设 mid = k / 2，当 A[mid - 1] < B[mid - 1] 时，可以断定 A 的前 mid 个元素是在 C 的前 k 个数里
 //  时间复杂度是 O(log(m+n))
-//TODO 吴名 2018-12-10 13:33 分治法
 
 // leetcode官方解答，时间复杂度 O(log(min(m,n)))
 // https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/
-func findMedianSortedArrays2(nums1 []int, nums2 []int) float64 {
+func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	//num1是较短数组
 	//
 	m, n := len(nums1), len(nums2)
