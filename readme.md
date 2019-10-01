@@ -1,2 +1,2 @@
 # Here is my learning notebook
-Welcome to Lustrew's personal [notebook](https://lustrew.github.io)
+Welcome to my personal [notebook](https://zara-wye.github.io)
