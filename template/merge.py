@@ -27,7 +27,12 @@ with open('./fixed/header.html', 'r') as f:
 with open('./fixed/footer.html', 'r') as f:
   txtBack = f.read()
 
-filePathlist = ['.', './note','./post']
+filePathlist = [
+  '.', 
+  './note',
+  # './post'
+]
+
 for filePath in filePathlist:
   filelist = os.listdir(filePath)
   merge_html(filePath,filelist)
