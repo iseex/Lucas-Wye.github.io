@@ -24,13 +24,11 @@
     <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
         
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="assets/plugins/highlight/styles/xcode.css">
+    <link rel="stylesheet" href="assets/plugins/highlight/styles/atom-one-light.css">
 
 
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
-
-
            
     <!-- Javascript -->          
     <script src="assets/plugins/jquery-3.3.1.min.js"></script>
@@ -139,26 +137,27 @@
                         </p>
 
                         <pre><code class="C++">
-#include<stdio.h>
-#include<omp.h>
+#include&ltstdio.h&gt
+#include&ltomp.h&gt
 
-int main(void){
+int main(void) {
     const int n = 10;
     int arr[n];
-#pragma omp parallel for     
-    for(int i=0;i<n;i++)
-    {
+
+    #pragma omp parallel for  
+    for(int i = 0;i &lt n;i++) {
         arr[i] = i;
         printf("%d\n",i);
     }
-    
-    int j;
-    for(j=0;j<n;j++){
+
+    for(int j = 0;j &lt n;j++){
         printf("%d\n",arr[j]);
     }
-    return 0;  
+
+    return 0;      
 }
-                        </code></pre>
+
+</code></pre>
                         
     
                         <h3 class="mt-5 mb-3">More Example</h3>

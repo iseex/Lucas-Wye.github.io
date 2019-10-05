@@ -102,54 +102,110 @@
                 <div class="intro">Welcome! Here you can find a lots of interesting things.</div>
             </div><!--//container-->
         </section>
-        <section class="blog-list px-3 py-5 p-md-5">
-			
-	<div class="container">
-	<div class="item mb-5">
-		<div class="media">
-			<!-- 图片 -->
-			<!-- <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-1.jpg" alt="image"> -->
-			<div class="media-body">
-				<h3 class="title mb-1">How To Write A Wonderful Passage</h3>
-				<!-- 日期 -->
-				<div class="meta mb-1"><span class="date">Updated: Oct 5th, 2019</span></div>
-				<!-- 简介 -->
-				<div class="intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies...</div>
-				<!-- 链接 -->
-				<a class="more-link" href="1-pages.html">Read more &rarr;</a>
-			</div><!--//media-body-->
-		</div><!--//media-->
-	</div><!--//item-->
+        
+		<article class="blog-post px-3 py-5 p-md-5">
+                <div class="container">
+                    <header class="blog-post-header">
+                        <!-- 标题 -->
+                        <h2 class="title mb-2">OpenMP使用方法</h2>
+                        <!-- 时间 -->
+                        <div class="meta mb-3"><span class="date">Updated: Oct 4th, 2019</span></div>
+                    </header>
+                    
+                    <div class="blog-post-body">
+                        <!-- 图片及描述 -->
+                        <!-- <figure class="blog-banner">
+                            <a href="#"><img class="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="image"></a>
+                            <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="#?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+                        </figure> -->
 
+                        <!-- 摘要 -->
+                        <p>
+                            OpenMP是由OpenMP Architecture Review Board牵头提出的，并已被广泛接受的，用于共享内存并行系统的多线程程序设计的一套编译指令 (Compiler Directive)。    
+                        </p>
+                        
+                        <h3 class="mt-5 mb-3">Introduction</h3>
+                        <p>
+                            See detail at <a href='https://en.wikipedia.org/wiki/OpenMP' target="_blank">wiki</a>.
+                        </p>
 
-	<div class="item">
-		<div class="media">
-			<!-- <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-6.jpg" alt="image"> -->
-			<div class="media-body">
-				<h3 class="title mb-1">OpenMP使用方法</h3>
-				<div class="meta mb-1"><span class="date">Updated: Oct 4th, 2019</span></div>
-				<div class="intro">OpenMP是由OpenMP Architecture Review Board牵头提出的，并已被广泛接受的，用于共享内存并行 ...</div>
-				<a class="more-link" href="2-openmp.html">Read more &rarr;</a>
-			</div><!--//media-body-->
-		</div><!--//media-->
-	</div><!--//item-->
-		
+                        <!-- 一级标题 -->
+                        <h3 class="mt-5 mb-3">OpenMP Programming Example</h3>
+                        <!-- 内容 -->
+                        <p>
+                            Here is a C program using OpenMP.
+                        </p>
 
-</br>
-			   <!-- 翻页 -->
-				 <nav class="blog-nav nav nav-justified my-5">
-					<a class="nav-link-prev nav-item nav-link rounded-left" href="post-list.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-					<a class="nav-link-next nav-item nav-link rounded-right" href="index.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
-				</nav>
-	
+                        <pre><code class="C++">
+#include&ltstdio.h&gt
+#include&ltomp.h&gt
 
+int main(void) {
+    const int n = 10;
+    int arr[n];
 
-	
-	</div>
-</section>
+    #pragma omp parallel for  
+    for(int i = 0;i &lt n;i++) {
+        arr[i] = i;
+        printf("%d\n",i);
+    }
 
+    for(int j = 0;j &lt n;j++){
+        printf("%d\n",arr[j]);
+    }
 
+    return 0;      
+}
 
+</code></pre>
+                        
+    
+                        <h3 class="mt-5 mb-3">More Example</h3>
+                        <p>
+                            See detail in these websites.
+                            </br>
+                            <a href='https://zhuanlan.zhihu.com/p/51173703' target="_blank">OpenMP并行开发（C++）</a>
+                            </br>
+                            <a href='https://blog.csdn.net/drzhouweiming/article/details/1175848' target="_blank">OpenMP并行程序设计（二）</a>
+                        </p>
+                      
+                    </div>
+
+                    <!-- 翻页 -->
+                    <nav class="blog-nav nav nav-justified my-5">
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="1-pages.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="#">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                    </nav>
+                    
+                    <div class="blog-comments-section">
+                        <div id="disqus_thread"></div>
+                        <script>					    
+                            (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                                var d = document, s = d.createElement('script');					        
+                                // IMPORTANT: Replace 3wmthemes with your forum shortname!
+                                s.src = '';					        
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+    
+                        <noscript>
+                            Please enable JavaScript to view the 
+                            <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                                comments powered by Disqus.
+                            </a>
+                        </noscript>
+                    </div><!--//blog-comments-section-->
+                    
+                </div><!--//container-->
+            </article>
+            
+    
+    
+    
+    
+    
+    
 
 </br></br></br></br>
 

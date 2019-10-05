@@ -33,28 +33,27 @@
                         </p>
 
                         <pre><code class="C++">
-                                https://mp.weixin.qq.com/s/oYhPsIqSnoMVV7-xNyX7xA
-                                https://segmentfault.com/a/1190000005840034
-#include<stdio.h>
-#include<omp.h>
+#include&ltstdio.h&gt
+#include&ltomp.h&gt
 
-int main(void){
+int main(void) {
     const int n = 10;
     int arr[n];
-#pragma omp parallel for     
-    for(int i=0;i<n;i++)
-    {
+
+    #pragma omp parallel for  
+    for(int i = 0;i &lt n;i++) {
         arr[i] = i;
         printf("%d\n",i);
     }
-    
-    int j;
-    for(j=0;j<n;j++){
+
+    for(int j = 0;j &lt n;j++){
         printf("%d\n",arr[j]);
     }
-    return 0;  
+
+    return 0;      
 }
-                        </code></pre>
+
+</code></pre>
                         
     
                         <h3 class="mt-5 mb-3">More Example</h3>
@@ -70,8 +69,8 @@ int main(void){
 
                     <!-- 翻页 -->
                     <nav class="blog-nav nav nav-justified my-5">
-                      <a class="nav-link-prev nav-item nav-link rounded-left" href="index.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                      <a class="nav-link-next nav-item nav-link rounded-right" href="post-list.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="1-pages.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="#">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
                     </nav>
                     
                     <div class="blog-comments-section">
