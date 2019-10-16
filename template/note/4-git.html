@@ -1,0 +1,192 @@
+
+		<article class="blog-post px-3 py-5 p-md-5">
+                <div class="container">
+                    <header class="blog-post-header">
+                        <!-- 标题 -->
+                        <h2 class="title mb-2">git使用</h2>
+                        <!-- 时间 -->
+                        <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
+                    </header>
+                    
+                    <div class="blog-post-body">
+                        <!-- 图片及描述 -->
+                        <!-- <figure class="blog-banner">
+                            <a href="#"><img class="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="image"></a>
+                            <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="#?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+                        </figure> -->
+
+                        <!-- 摘要 -->
+                        <p>
+                            Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</br>
+                            Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</br>
+                            Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。 </br>
+                        </p>
+                        
+                        <h3 class="mt-5 mb-3">git本地操作</h3>
+                        <p>
+                            (1)创建空仓库
+                            <pre><code>
+git init
+                            </code></pre>
+
+                            (2)添加文件
+                            <pre><code>
+git add filename
+git commit -m 说明
+# -m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。
+                            </code></pre>
+
+                            (3)查看状态
+                            <pre><code>
+git status
+git diff
+                            </code></pre>
+
+                            (4)版本回退
+                            <pre><code>
+# 上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
+git reset --hard HEAD^
+                            </code></pre>
+
+                            (5)记录
+                            <pre><code>
+git log
+git reflog
+                            </code></pre>
+
+                            (6)删除
+                            <pre><code>
+rm test.txt
+git rm test.txt
+git commit -m '...'
+                            </code></pre>
+                        </p>
+
+                        <!-- 一级标题 -->
+                        <h3 class="mt-5 mb-3">git远程</h3>
+                        <!-- 内容 -->
+                        <p>
+                            (1)创建远程
+                            <pre><code>
+ssh-keygen -t rsa -C "xxxxxxxxx@xx.com"
+git config --global user.name "your name"
+git config --global user.email "your email"
+                            </code></pre>
+
+                            (2)推送至github
+                            <pre><code>
+git remote add origin git@github.com:xxx/xxx.git
+                            </code></pre>
+
+                            (3)第一次推送
+                            <pre><code>
+git push -u origin master
+                            </code></pre>
+
+                            (4)后续推送
+                            <pre><code>
+git push origin master
+git push
+                            </code></pre>
+
+                            (5)克隆
+                            <pre><code>
+git clone git@github.com:xxx/xxx.git
+                            </code></pre>
+
+                            (6)拉取远程代码
+                            <pre><code>
+git pull # 用于从另一个存储库或本地分支获取并集成(整合)。git pull命令的作用是：取回远程主机某个分支的更新，再与本地的指定分支合并杂。
+# git pull <远程主机名> <远程分支名>:<本地分支名>
+
+git pull origin next:master
+# 取回origin主机的next分支，与本地的master分支合并
+
+git pull origin next
+# 远程分支(next)与当前分支合并，则冒号后面的部分可以省略
+
+git pull origin
+# 当前分支与远程分支存在追踪关系，git pull就可以省略远程分支名。
+
+git pull
+# 如果当前分支只有一个追踪分支，连远程主机名都可以省略。
+                            </code></pre>
+
+                            (7)删除git项目所有提交历史
+                            <pre><code>
+# 创建新分支（这个命名是基于当前所在分支新建一个赤裸裸的分支，没有任何的提交历史，但是当前分支的内容一应俱全。新建的分支，严格意义上说，还不是一个分支，因为HEAD指向的引用中没有commit值，只有在进行一次提交后，它才算得上真正的分支。）
+git checkout --orphan latest_branch
+# 添加所有文件
+git add .
+# commit代码
+git commit -m "xxx"
+# 删除原来的master分支
+git branch -D master
+# 把当前分支重命名为master
+git branch -m master
+# 最后把代码推送到远程仓库（有些仓库有master分支保护，不允许强制push，需要在远程仓库项目里暂时把项目保护关掉才能推送）
+git push -f origin master
+                            </code></pre>
+
+                            (8).git垃圾回收
+                            Git 仓库越来越臃肿，大多数版本控制系统存储的是一组初始文件，以及每个文件随着时间的演进而逐步积累起来的差异；而 Git 则会把文件的每一个差异化版本都记录在案。这意味着，即使你只改动了某个文件的一行内容，Git 也会生成一个全新的对象来存储新的文件内容。 
+对象碎片 如果你改动了一个很大的文件，git会为这个文件生成了一个很大的Blob对象
+                            <pre><code>
+cd .git
+du -ah    # 查看文件大小
+# 垃圾回收
+git gc --prune=now
+
+                            </code></pre>
+                            实际上，并不需要手动调用 gc 命令。每当碎片对象过多，或者你向远端服务器发起推送的时候，git 就会自动执行一次打包过程。
+                        </p>
+
+                      
+                        
+    
+                        <h3 class="mt-5 mb-3">More</h3>
+                        <p>
+                            See detail in these websites.
+                            </br>
+                            <a href='https://www.runoob.com/git/git-tutorial.html' target="_blank">git教程</a>
+                            </br>
+                            <a href='https://www.liaoxuefeng.com/wiki/896043488029600' target="_blank">git教程</a>
+                        </p>
+                      
+                    </div>
+
+                    <!-- 翻页 -->
+                    <nav class="blog-nav nav nav-justified my-5">
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="3-linux.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="5-vi.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                    </nav>
+                    
+                    <div class="blog-comments-section">
+                        <div id="disqus_thread"></div>
+                        <script>					    
+                            (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                                var d = document, s = d.createElement('script');					        
+                                // IMPORTANT: Replace 3wmthemes with your forum shortname!
+                                s.src = '';					        
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+    
+                        <noscript>
+                            Please enable JavaScript to view the 
+                            <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                                comments powered by Disqus.
+                            </a>
+                        </noscript>
+                    </div><!--//blog-comments-section-->
+                    
+                </div><!--//container-->
+            </article>
+            
+    
+    
+    
+    
+    
+    

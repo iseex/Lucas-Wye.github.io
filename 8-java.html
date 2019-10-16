@@ -92,10 +92,6 @@
                         <a class="nav-link" href="note-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Note</a>
                     </li>
 
-                    <!-- project -->
-                    <li class="nav-item">
-                            <a class="nav-link" href="post-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Post</a>
-                    </li>
 
                 </ul>
 
@@ -114,55 +110,96 @@
                 <div class="intro">Welcome! Here you can find a lots of interesting things.</div>
             </div><!--//container-->
         </section>
-        <section class="blog-list px-3 py-5 p-md-5">
-		
-	<div class="container">
-			<h2 class="heading"><font color="#FF8C00">Post</font></h2>
-	<div class="item mb-5">
-		<div class="media">
-			<!-- 图片 -->
-			<!-- <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-1.jpg" alt="image"> -->
-			<div class="media-body">
-				<h3 class="title mb-1">How To Write A Wonderful Passage</h3>
-				<!-- 日期 -->
-				<div class="meta mb-1"><span class="date">Updated: Oct 5th, 2019</span></div>
-				<!-- 简介 -->
-				<div class="intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies...</div>
-				<!-- 链接 -->
-				<a class="more-link" href="1-pages.html">Read more &rarr;</a>
-			</div><!--//media-body-->
-		</div><!--//media-->
-	</div><!--//item-->
+        
+		<article class="blog-post px-3 py-5 p-md-5">
+                <div class="container">
+                    <header class="blog-post-header">
+                        <!-- 标题 -->
+                        <h2 class="title mb-2">Java</h2>
+                        <!-- 时间 -->
+                        <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
+                    </header>
+                    
+                    <div class="blog-post-body">
+                        <!-- 图片及描述 -->
+                        <!-- <figure class="blog-banner">
+                            <a href="#"><img class="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="image"></a>
+                            <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="#?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+                        </figure> -->
+
+                        <!-- 摘要 -->
+                        <p>
+                            Java 教程 Java 是由Sun Microsystems公司于1995年5月推出的高级程序设计语言。 Java可运行于多个平台，如Windows, Mac OS，及其他多种UNIX版本的系统。
+                        </p>
+                        
+                        <h3 class="mt-5 mb-3">Install</h3>
+                        <p>
+                            <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">下载JDK</a></br>
+                            <a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA下载</a>
+                            <pre><code>
+# 配置环境变量                                
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_144  # 这里换成自己的jdk目录
+export JRE_HOME=${JAVA_HOME}/jre  
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
+export PATH=${JAVA_HOME}/bin:$PATH 
+                            </code></pre>
+                        </p>
+
+                        <h3 class="mt-5 mb-3">安卓adb</h3>
+                        <p>
+                            <pre><code>
+# 卸载系统软件
+adb shell
+pm list package
+pm uninstall -k --user 0 package_name
+                            </code></pre>
+                        </p>
 
 
-	<div class="item">
-		<div class="media">
-			<!-- <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-6.jpg" alt="image"> -->
-			<div class="media-body">
-				<h3 class="title mb-1">OpenMP使用方法</h3>
-				<div class="meta mb-1"><span class="date">Updated: Oct 4th, 2019</span></div>
-				<div class="intro">OpenMP是由OpenMP Architecture Review Board牵头提出的，并已被广泛接受的，用于共享内存并行 ...</div>
-				<a class="more-link" href="2-openmp.html">Read more &rarr;</a>
-			</div><!--//media-body-->
-		</div><!--//media-->
-	</div><!--//item-->
-		
+                        <!-- <h3 class="mt-5 mb-3">More</h3>
+                        <p>
+                            See detail in these websites.
+                            </br>
+                            <a href='https://blog.csdn.net/gatieme/article/details/51671430' target="_blank">more of gdb</a>
+                        </p> -->
+                      
+                    </div>
 
-</br>
-			   <!-- 翻页 -->
-				 <nav class="blog-nav nav nav-justified my-5">
-					<a class="nav-link-prev nav-item nav-link rounded-left" href="note-list.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-					<a class="nav-link-next nav-item nav-link rounded-right" href="index.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
-				</nav>
-	
-
-
-	
-	</div>
-</section>
-
-
-
+                    <!-- 翻页 -->
+                    <nav class="blog-nav nav nav-justified my-5">
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="6-network.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="8-java.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                    </nav>
+                    
+                    <div class="blog-comments-section">
+                        <div id="disqus_thread"></div>
+                        <script>					    
+                            (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                                var d = document, s = d.createElement('script');					        
+                                // IMPORTANT: Replace 3wmthemes with your forum shortname!
+                                s.src = '';					        
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+    
+                        <noscript>
+                            Please enable JavaScript to view the 
+                            <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                                comments powered by Disqus.
+                            </a>
+                        </noscript>
+                    </div><!--//blog-comments-section-->
+                    
+                </div><!--//container-->
+            </article>
+            
+    
+    
+    
+    
+    
+    
 </br></br></br></br>
 
         <footer class="footer text-center py-2 theme-bg-dark">

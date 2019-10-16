@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Welcome to Wye's space!</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+
+    <meta name="author" content="Lucas-Wye">
+    <meta name="application-name" content="notebook">
+    <meta name="keywords" content="linux学习，mac教程，Hello, welcome to my personal website">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="This is a website for personal learning progress and some successful or interesting things." />
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="no-cache" />
+
+
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+        
+    <!-- 代码高亮主题 CSS -->
+    <link rel="stylesheet" href="assets/plugins/highlight/styles/atom-one-light.css">
+
+
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+           
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- 代码高亮脚本 JS -->
+    <script src="assets/plugins/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="assets/js/demo/style-switcher.js"></script>  
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?287f36c0e54c2fac254948fb0a9b18e0";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+        <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Wye's Space</a></h1>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark" >
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navigation" class="collapse navbar-collapse flex-column" >
+                <div class="profile-section pt-3 pt-lg-0">
+                    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >			
+                    
+                    <div class="bio mb-3">Hello, welcome to Wye's space. This is a website for personal learning notes and some interesting things.</div><!--//bio-->
+                    <ul class="social-list list-inline py-3 mx-auto">
+                        <li class="list-inline-item"><a href="https://github.com/Lucas-Wye"><i class="fab fa-github-alt fa-fw"></i></a></li>
+                    </ul><!--//social-list-->
+                    <hr> 
+                </div><!--//profile-section-->
+                
+                <ul class="navbar-nav flex-column text-left">
+                    <!-- ft动画 -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Home<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <!-- 技术贴 -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="note-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Note</a>
+                    </li>
+
+
+                </ul>
+
+                <div class="my-2 my-md-3">
+                    <a class="btn btn-primary" href="mailto:lustrew@foxmail.com" target="_blank">Get in Touch</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+        <section class="cta-section theme-bg-light py-5">
+            <div class="container text-center">
+                <h2 class="heading">Enjoy yourselves!</h2>
+                <div class="intro">Life is hard, just be happy!</div>
+                <div class="intro">Welcome! Here you can find a lots of interesting things.</div>
+            </div><!--//container-->
+        </section>
+        
+		<article class="blog-post px-3 py-5 p-md-5">
+                <div class="container">
+                    <header class="blog-post-header">
+                        <!-- 标题 -->
+                        <h2 class="title mb-2">Vi/Vim</h2>
+                        <!-- 时间 -->
+                        <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
+                    </header>
+                    
+                    <div class="blog-post-body">
+                        <p>
+                            所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在。</br>
+                            但是目前我们使用比较多的是 vim 编辑器。</br>
+                            vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计。</br>
+                            Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 </br>
+                        </p>
+                        
+                        <h3 class="mt-5 mb-3">Basic</h3>
+                        <p>
+                            <table border="1">
+                                <tr>
+                                <td>key</td><td>function</td>
+                                </tr>
+                                <tr><td>i </td><td> Insert 模式，按 ESC 回到 Normal 模式.</td></tr>
+<tr><td>x </td><td> 删当前光标所在的一个字符。</td></tr>
+<tr><td>:wq</td> <td> 存盘 + 退出 (:w 存盘, :q 退出)(:w 后可以跟文件名）</td></tr>
+<tr><td>dd </td><td> 删除当前行，并把删除的行存到剪贴板里</td></tr>
+<tr><td>p</td> <td> 粘贴剪贴板</td></tr>
+<tr><td>a </td><td> 在光标后插入</td></tr>
+<tr><td>o </td><td> 在当前行后插入一个新行</td></tr>
+<tr><td>O </td><td> 在当前行前插入一个新行</td></tr>
+<tr><td>^ </td><td>到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等） </td></tr>
+<tr><td>/pattern </td><td> 搜索 pattern 的字符串（如果搜索出多个匹配，可按n键到下一个）</td></tr>
+<tr><td>P </td><td> 粘贴</td></tr>
+<tr><td>yy </td><td> 拷贝当前行当行于 ddP</td></tr>
+<tr><td>u </td><td> undo</td></tr>
+<tr><td>^r</td> <td> redo</td></tr>
+<tr><td>:saveas &lt;path/to/file&gt; </td><td> 另存为 &lt;path/to/file&gt;</td></tr>
+<tr><td>:q! </td><td> 退出不保存 :qa! 强行退出所有的正在编辑的文件，就算别的文件有更改。</td></tr>
+<tr><td>:bn 和 :bp </td><td> 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件</td></tr>
+<tr><td>. </td><td> (小数点) 可以重复上一次的命令</td></tr>
+<tr><td>N&lt;command&gt; </td><td> 重复某个命令N次</td></tr>
+<tr><td>:N </td><td> 到第N行</td></tr>
+<tr><td>gg  </td><td> 到第一行</td></tr>
+<tr><td>G </td><td> 到最后一行</td></tr>
+<tr><td>W </td><td> 到下一个单词的开头。</td></tr>
+<tr><td>E </td><td> 到下一个单词的结尾。</td></tr>
+<tr><td>% </td><td> 匹配括号移动，包括 (, {, [.</td></tr>
+<tr><td>0y$ </td><td> 拷贝当前行<td></tr>
+<tr><td>fa </td><td> 到下一个为a的字符处</td></tr>
+<tr><td>t, </td><td> 到逗号前的第一个字符。逗号可以变成其它字符</td></tr>
+<tr><td>F 和 T</td> <td> 和 f 和 t 一样，只不过是相反方向</td></tr>
+<tr><td>v </td><td>可视化</td></tr>
+<tr><td>^p,^n </td><td> 自动补齐</td></tr>
+<tr><td>qa </td><td>把你的操作记录在寄存器 a,于是 @a 会replay被录制的宏, @@ 是一个快捷键用来replay最新录制的宏。</td></tr>
+<tr><td>:split</td> <td> 创建分屏 (:vsplit创建垂直分屏)</td></tr>
+<tr><td> ^w </td><td> 切换分屏。 </td></tr>
+<tr><td>^w_ </td><td> 减小尺寸 </td></tr>
+<tr><td> ^w+ </td><td> 增加尺寸 </td></tr>
+                                 
+                            </table>
+                        </p>
+
+                   
+                        <h3 class="mt-5 mb-3">Cursor movement</h3>
+                        <p>
+                                <table border="1">
+                                    <tr><td>key</td><td>function</td></tr>
+                                    <tr><td> hjkl  </td><td>move  </td></tr>
+<tr><td> ^F </td> <td>forward one screen  </td></tr>
+<tr><td> ^B </td><td> back one screen  </td></tr>
+<tr><td> ^D </td> <td>down half screen  </td></tr>
+<tr><td> ^U </td> <td>up half screen  </td></tr>
+<tr><td> G </td> <td>go to last line of file  </td></tr>
+<tr><td> [n] G </td><td> go to last line or line [n]  </td></tr>
+<tr><td> $ </td><td> end of current line  </td></tr>
+<tr><td> ^ </td><td> beginning of text on current line  </td></tr>
+<tr><td> 0 </td><td> beginning of current line  </td></tr>
+<tr><td> [n] w </td><td> forward [n] word(s)  </td></tr>
+<tr><td> [n] b </td><td> back [n] word(s)  </td></tr>
+<tr><td> e </td><td> end of word  </td></tr>
+                                </table>
+                        </p>
+                   
+
+                        <h3 class="mt-5 mb-3">Cursor movement by matching</h3>
+                        <p>
+                                <table border="1">
+                                        <tr><td>key</td><td>function</td></tr>
+
+<tr><td> f character      </td> <td>forward to next this character </td></tr>
+<tr><td> / pattern string      </td><td>  go to matched pattern downward </td></tr>
+<tr><td> ? pattern string      </td> <td> go to matched pattern upward  </td></tr>
+<tr><td> n and N      </td>  <td>next matched </td></tr>
+<tr><td> %      </td>  <td>match parentheses  </td></tr>
+
+                                    </table>
+                        </p>
+                   
+
+                        <h3 class="mt-5 mb-3">Inserting text</h3>
+                        <p>
+                                <table border="1">
+                                        <tr><td>key</td><td>function</td></tr>
+
+                                        <tr><td> i </td><td> insert text before the cursor </td></tr>
+<tr><td> a </td><td> append text after the cursor </td></tr>
+<tr><td> I </td><td> insert text at beginning of line </td></tr>
+<tr><td> A </td><td> append text at end of line </td></tr>
+<tr><td> o </td><td> open new line after current line </td></tr>
+<tr><td> O </td><td> open new line before current line </td></tr>
+                                    </table>
+                        </p>
+                      
+                   
+
+                        <h3 class="mt-5 mb-3">Deleting text</h3>
+                        <p>
+                                <table border="1">
+                                        <tr><td>key</td><td>function</td></tr>
+
+<tr><td> dd </td><td> delete current line</td></tr>
+<tr><td>[n] dd or d [n] d </td><td>delete [n] line(s)</td></tr>
+<tr><td>[n] dw </td><td> delete [n] word(s) </td></tr>
+<tr><td> D </td><td> delete from cursor to end of line</td></tr>
+<tr><td> x </td><td> delete current character </td></tr>
+<tr><td> [n] x </td><td> delete [n] characters </td></tr>
+<tr><td> [n] X </td><td> delete previous [n] character (like backspace) </td></tr>
+
+                                    </table>
+                        </p>
+                   
+                        <h3 class="mt-5 mb-3">Changing commands</h3>
+                        <p>
+                                <table border="1">
+                                        <tr><td>key</td><td>function</td></tr>
+
+                                        <tr><td> s/S  </td><td> substitute  </td></tr>
+<tr><td> cw  </td><td> change word  </td></tr>
+<tr><td> [n]cw  </td><td> change next [n] word(s)  </td></tr>
+<tr><td> c$  </td><td> change from cursor to end of line  </td></tr>
+<tr><td> ~  </td><td> change case of character  </td></tr>
+<tr><td> J  </td><td> join current line and next line  </td></tr>
+<tr><td> u  </td><td> undo the last command just done  </td></tr>
+<tr><td> .  </td><td> repeat last change </td></tr>
+<tr><td> [n]yy or y[n]y </td><td> yank [n] line(s) to buffer </td></tr>
+<tr><td> [n] yw </td><td> yank [n] word(s) to buffer </td></tr>
+<tr><td> p  </td><td> put yanked or deleted text after cursor </td></tr>
+<tr><td> P  </td><td> put yanked or deleted text before cursor </td></tr>
+
+                                    </table>
+                        </p>
+                   
+                        <h3 class="mt-5 mb-3">Command line mode</h3>
+                        <p>
+                                <table border="1">
+                                        <tr><td>key</td><td>function</td></tr>
+
+                                        <tr><td> :number </td><td>  跳到那一行 </td></tr>
+<tr><td> -/+ 行数 </td><td> 向前或者向后移动若干行 </td></tr>
+<tr><td> :![cmd] </td><td> 暂时退出命令行执行cmd </td></tr>
+<tr><td> :set all </td><td> display all option settings  </td></tr>
+<tr><td> :[Addr]s/old expr/new string/[g] </td><td> 替换当前行/Addr的old expr为new string,[g]加上则替换所有的，否则只替换第一个 </td></tr>
+
+                                    </table>
+                        </p>
+                    
+
+                        <h3 class="mt-5 mb-3">Regular expression</h3>
+                        <p>
+                                <table border="1">
+                                        <tr><td>key</td><td>function</td></tr>
+
+                                        <tr><td> ? </td> match any single character at the indicated position </td></tr>
+<tr><td> * </td><td>  match any string of zero or more characters </td></tr>
+<tr><td> [abc...] </td><td> match any of the enclosed characters </td></tr>
+<tr><td> [a-e] </td><td> match any characters in the range a,b,c,d,e </td></tr>
+<tr><td> [!def] </td><td> match any characters not one of the enclosed characters, sh/bash </td></tr>
+<tr><td> {abc,bcd,cde} </td><td> match any set of characters separated by comma (,) (no spaces), bash/csh </td></tr>
+<tr><td> ~</td><td>  home directory of the current user, bash/csh </td></tr>
+<tr><td> ~ user </td><td> home directory of the specified user, bash/csh </td></tr>
+<tr><td> . </td><td> match any single character except newline </td></tr>
+<tr><td> [^abc] </td><td> match any character NOT in the enclosed set </td></tr>
+<tr><td> ^exp </td><td> regular expression must start at the beginning of the line </td></tr>
+<tr><td> exp$ </td><td> regular expression must end at the end of the line </td></tr>
+<tr><td> \ </td><td> treat the next character literally 转义字符 </td></tr>
+<tr><td> xy*z </td><td> xy开头，z结尾的字符串 </td></tr>
+                                    </table>
+                        </p>
+                   
+
+                        <h3 class="mt-5 mb-3">Multi files</h3>
+                        <p>
+                                <table border="1">
+                                        <tr><td>key</td><td>function</td></tr>
+                                        <tr><td> :n </td><td> move to next file </td></tr>
+<tr><td> :rew </td><td> 回到第一个文件 </td></tr>
+                                    </table>
+                        </p>
+                    
+
+                        
+                        
+
+                        
+    
+                        <h3 class="mt-5 mb-3">More</h3>
+                        <p>
+                            See detail in these websites.
+                            </br>
+                            <a href='https://www.runoob.com/linux/linux-vim.html' target="_blank">Vi/Vim教程</a>
+                            </br>
+                            <a href='https://coolshell.cn/articles/5426.html' target="_blank">简明 VIM 练级攻略</a>
+                        </p>
+                      
+                    </div>
+
+
+
+
+
+
+
+                    <!-- 翻页 -->
+                    <nav class="blog-nav nav nav-justified my-5">
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="4-git.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="6-network.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                    </nav>
+                    
+                    <div class="blog-comments-section">
+                        <div id="disqus_thread"></div>
+                        <script>					    
+                            (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                                var d = document, s = d.createElement('script');					        
+                                // IMPORTANT: Replace 3wmthemes with your forum shortname!
+                                s.src = '';					        
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+    
+                        <noscript>
+                            Please enable JavaScript to view the 
+                            <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                                comments powered by Disqus.
+                            </a>
+                        </noscript>
+                    </div><!--//blog-comments-section-->
+                    
+                </div><!--//container-->
+            </article>
+            
+    
+    
+    
+    
+    
+    
+</br></br></br></br>
+
+        <footer class="footer text-center py-2 theme-bg-dark">
+            <small class="copyright">                           
+                Designed by <a href="https://3rdwavemedia.com">3rdwavemedia</a>;  &nbspCopyright©Wye, 2019
+            <small>
+        </footer>
+	
+	</div><!--//main-wrapper-->
+
+</body>
+</html> 

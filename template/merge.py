@@ -29,8 +29,7 @@ with open('./fixed/footer.html', 'r') as f:
 
 filePathlist = [
   '.', 
-  './note',
-  # './post'
+  './note'
 ]
 
 for filePath in filePathlist:
