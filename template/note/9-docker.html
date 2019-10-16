@@ -3,7 +3,7 @@
                 <div class="container">
                     <header class="blog-post-header">
                         <!-- 标题 -->
-                        <h2 class="title mb-2">GCC</h2>
+                        <h2 class="title mb-2">Docker</h2>
                         <!-- 时间 -->
                         <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
                     </header>
@@ -17,97 +17,36 @@
 
                         <!-- 摘要 -->
                         <p>
-                            GCC编译器也称为Linux GCC命令，它有很多选项。GCC编译器是Linux下最常用的编译器。
+                            Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。
                         </p>
                         
-                        <h3 class="mt-5 mb-3">安装</h3>
+                        <h3 class="mt-5 mb-3">Install</h3>
                         <p>
-                            
                             <pre><code>
-# MacOS安装Xcode工具链                                
-xcode-select --install
-# Ubuntu
-sudo apt install gcc
-                    </code></pre>
-                </p>
-
-
-                        <h3 class="mt-5 mb-3">基本使用</h3>
-                        <p>
-                            
-                            <pre><code>
-gcc -c filename.c # compile only, produce .o
-gcc -g # compile for debugging
-gcc -o filename.o # 
-gcc -O1,2,3,4,s,fast # for optimization level
-gcc -Ipathname 
-gcc -Dsymbol # define preprocessor symbol
-gcc -Ldirectory # add directory to the library search path
-gcc -lxyz # link with library libxyz.a or libxyz.so
+# Ubuntu                                
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
                             </code></pre>
                         </p>
-
-                        <h3 class="mt-5 mb-3">gdb</h3>
-                        <p>
-                            <pre><code>
-gdb a.out # debug
-list
-br 8 # breakpoint in line 8
-run # 
-print value 
-next
-where
-help
-quit
-                            </code></pre>
-                        </p>
-
-                        <h3 class="mt-5 mb-3">make</h3>
-                        <p>
-                            (1)Predefined Macros
-                            <pre><code>
-AS - assembler (as)
-CC - C compiler command (cc)
-FC - Fortran compiler command (fc)
-CPP - C++ preprocessing command ($(CC) -E)
-CXX - C++ compiler command (g++)
-CFLAGS - C compiler option flags (e.g. -g)
-FFLAGS - Fortran compiler option flags (e.g. -g)
-LDFLAGS - Linking option flags (e.g. –L /usr/share/lib)
-LDLIBS – Linking libraries (e.g. -lm)
-                            </code></pre>
-                            (2)Special Internal Macros
-                            <pre><code>
-$*
-# The basename of the current target
-$&lt;
-# The name of a dependency file, as we see on last page
-$@
-# The name of the current target.
-$?
-# The list of dependencies that are newer than the target.
-                            </code></pre>
-                        </p>
-                        
-                        
 
                       
-                        
-    
+
+
                         <h3 class="mt-5 mb-3">More</h3>
                         <p>
                             See detail in these websites.
                             </br>
-                            <a href='https://blog.csdn.net/gatieme/article/details/51671430' target="_blank">more of gdb</a>
-                            
+                            <a href='https://wiki.jikexueyuan.com/project/docker-technology-and-combat/save_load.html' target="_blank">教程1</a>
+                        </br>
+                            <a href="https://zhuanlan.zhihu.com/p/82433360?app=zhihulite&utm_campaign=lite_share&invite_code=XFMDAK&sign=MTU2ODM5MTUyNDY5MQ%3D%3D" target="_blank">教程2</a>
                         </p>
                       
                     </div>
 
                     <!-- 翻页 -->
                     <nav class="blog-nav nav nav-justified my-5">
-                      <a class="nav-link-prev nav-item nav-link rounded-left" href="6-network.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                      <a class="nav-link-next nav-item nav-link rounded-right" href="8-java.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="8-java.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="10-kali.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
                     </nav>
                     
                     <div class="blog-comments-section">
@@ -139,3 +78,6 @@ $?
     
     
     
+
+
+

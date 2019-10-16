@@ -117,21 +117,28 @@ scp -r username@192.168.0.1:/home/username/remotefile.txt .
 # 将*文件/文件夹*从本地*推送*到远程机(scp) 
 scp -r localfile.txt username@192.168.0.1:/home/username/        
                             </code></pre>
-
-
                             </p>
+
+                            <h3 class="mt-5 mb-3">校园网vpn设置</h3>
+                        <p>
+                            <pre><code>
+# 安装
+sudo apt install network-manager-l2tp
+sudo apt install network-manager-l2tp-gnome
+# 命令行连接zju vpn
+sudo nmcli con up ZJU --ask
+</code></pre>
+</p>
 
                       
                         
     
-                        <!-- <h3 class="mt-5 mb-3">More</h3>
+                        <h3 class="mt-5 mb-3">More</h3>
                         <p>
                             See detail in these websites.
                             </br>
-                            <a href='https://www.runoob.com/git/git-tutorial.html' target="_blank">git教程</a>
-                            </br>
-                            <a href='https://www.liaoxuefeng.com/wiki/896043488029600' target="_blank">git教程</a>
-                        </p> -->
+                            <a href='https://www.qingtingip.com/h_189554.html' target="_blank">nmcli用法</a>
+                        </p>
                       
                     </div>
 

@@ -3,7 +3,7 @@
                 <div class="container">
                     <header class="blog-post-header">
                         <!-- 标题 -->
-                        <h2 class="title mb-2">GCC</h2>
+                        <h2 class="title mb-2">Kali</h2>
                         <!-- 时间 -->
                         <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
                     </header>
@@ -17,97 +17,70 @@
 
                         <!-- 摘要 -->
                         <p>
-                            GCC编译器也称为Linux GCC命令，它有很多选项。GCC编译器是Linux下最常用的编译器。
+                            Kali Linux是基于Debian的Linux发行版， 设计用于数字取证操作系统。由Offensive Security Ltd维护和资助。最先由Offensive Security的Mati Aharoni和Devon Kearns通过重写BackTrack来完成，BackTrack是他们之前写的用于取证的Linux发行版。</br>
+                            Kali Linux预装了许多渗透测试软件，包括nmap 、Wireshark 、John the Ripper，以及Aircrack-ng；用户可通过硬盘、live CD或live USB运行Kali Linux。Kali Linux既有32位和64位的镜像。可用于x86 指令集。同时还有基于ARM架构的镜像，可用于树莓派和三星的ARM Chromebook。
                         </p>
                         
-                        <h3 class="mt-5 mb-3">安装</h3>
+                        <h3 class="mt-5 mb-3">Install</h3>
                         <p>
-                            
                             <pre><code>
-# MacOS安装Xcode工具链                                
-xcode-select --install
-# Ubuntu
-sudo apt install gcc
-                    </code></pre>
-                </p>
-
-
-                        <h3 class="mt-5 mb-3">基本使用</h3>
-                        <p>
-                            
-                            <pre><code>
-gcc -c filename.c # compile only, produce .o
-gcc -g # compile for debugging
-gcc -o filename.o # 
-gcc -O1,2,3,4,s,fast # for optimization level
-gcc -Ipathname 
-gcc -Dsymbol # define preprocessor symbol
-gcc -Ldirectory # add directory to the library search path
-gcc -lxyz # link with library libxyz.a or libxyz.so
+# 从Docker安装
+docker pull kalilinux/kali-linux-docker
+# 运行
+docker run -t -i kalilinux/kali-linux-docker /bin/bash
                             </code></pre>
                         </p>
 
-                        <h3 class="mt-5 mb-3">gdb</h3>
+                        <h3 class="mt-5 mb-3">设置镜像源</h3>
                         <p>
                             <pre><code>
-gdb a.out # debug
-list
-br 8 # breakpoint in line 8
-run # 
-print value 
-next
-where
-help
-quit
+# 修改/etc/apt/source.list
+# 中科大
+deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
+ 
+# 阿里云
+deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+ 
+# 清华
+deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free
+deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free
+ 
+# 浙大
+deb http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free
+deb-src http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free
+ 
+# 官方源
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+deb-src http://http.kali.org/kali kali-rolling main non-free contrib
+ 
+deb http://mirrors.163.com/debian/ jessie main non-free contrib
+deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib
+deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib
+deb-src http://mirrors.163.com/debian/ jessie main non-free contrib
+deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib
+deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib
+deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
+deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
                             </code></pre>
                         </p>
-
-                        <h3 class="mt-5 mb-3">make</h3>
-                        <p>
-                            (1)Predefined Macros
-                            <pre><code>
-AS - assembler (as)
-CC - C compiler command (cc)
-FC - Fortran compiler command (fc)
-CPP - C++ preprocessing command ($(CC) -E)
-CXX - C++ compiler command (g++)
-CFLAGS - C compiler option flags (e.g. -g)
-FFLAGS - Fortran compiler option flags (e.g. -g)
-LDFLAGS - Linking option flags (e.g. –L /usr/share/lib)
-LDLIBS – Linking libraries (e.g. -lm)
-                            </code></pre>
-                            (2)Special Internal Macros
-                            <pre><code>
-$*
-# The basename of the current target
-$&lt;
-# The name of a dependency file, as we see on last page
-$@
-# The name of the current target.
-$?
-# The list of dependencies that are newer than the target.
-                            </code></pre>
-                        </p>
-                        
-                        
 
                       
-                        
-    
+
                         <h3 class="mt-5 mb-3">More</h3>
                         <p>
                             See detail in these websites.
                             </br>
-                            <a href='https://blog.csdn.net/gatieme/article/details/51671430' target="_blank">more of gdb</a>
-                            
+                            <a href='https://www.kali.org/' target="_blank">kali官网</a>
                         </p>
                       
                     </div>
 
                     <!-- 翻页 -->
                     <nav class="blog-nav nav nav-justified my-5">
-                      <a class="nav-link-prev nav-item nav-link rounded-left" href="6-network.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                      <a class="nav-link-next nav-item nav-link rounded-right" href="8-java.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="9-docker.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="#">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
                     </nav>
                     
                     <div class="blog-comments-section">
@@ -132,10 +105,3 @@ $?
                     
                 </div><!--//container-->
             </article>
-            
-    
-    
-    
-    
-    
-    

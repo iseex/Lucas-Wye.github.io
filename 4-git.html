@@ -250,7 +250,16 @@ du -ah    # 查看文件大小
 git gc --prune=now
 
                             </code></pre>
-                            实际上，并不需要手动调用 gc 命令。每当碎片对象过多，或者你向远端服务器发起推送的时候，git 就会自动执行一次打包过程。
+                            实际上，并不需要手动调用 gc 命令。每当碎片对象过多，或者你向远端服务器发起推送的时候，git 就会自动执行一次打包过程。</br>
+                            (9)git更改远程库
+                            <pre><code>
+# 查询当前远程库
+git remote -v
+# 更改远程库
+git remote rm origin
+git remote add origin git@github.com:xxx/xxx.git
+git push -u origin master
+                            </code></pre>
                         </p>
 
                       
