@@ -1,0 +1,106 @@
+
+
+
+<article class="blog-post px-3 py-5 p-md-5">
+        <div class="container">
+            <header class="blog-post-header">
+                <!-- 标题 -->
+                <h2 class="title mb-2">LaTeX</h2>
+                <!-- 时间 -->
+                <div class="meta mb-3"><span class="date">Updated: Oct 21st, 2019</span></div>
+            </header>
+            
+            <div class="blog-post-body">
+                <!-- 图片及描述 -->
+                <!-- <figure class="blog-banner">
+                    <a href="#"><img class="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="image"></a>
+                    <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="#?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+                </figure> -->
+
+                <!-- 摘要 -->
+                <p>                   
+                    LaTeX（音译“拉泰赫”）是一种基于ΤΕΧ的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发。</br>
+                    利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由TeX所提供的强大功能，能在几天，甚至几小时内生成很多具有书籍质量的印刷品。</br>
+                    对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。                    
+                </p>
+                
+                <h3 class="mt-5 mb-3">Install</h3>
+                <p>
+                    从<a href='https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/'>清华镜像源</a>下载对应操作系统的Texlive软件包
+                    <pre><code>
+# 安装
+sudo ./install-tl   
+# 设置环境变量
+# LaTeX
+export TEX_HOME=/usr/local/texlive/2019
+export PATH=$PATH:$TEX_HOME/bin/x86_64-linux
+export INFOPATH=$INFOPATH:$TEX_HOME/texmf-dist/doc/info
+export MANPATH=$MANPATH:$TEX_HOME/texmf-dist/doc/man                  
+                    </code></pre>
+                </p>
+
+                <h3 class="mt-5 mb-3">安装 Windows 字体</h3>
+                <p>                  
+                    <pre><code>
+# 创建 win 下字体专用文件夹
+sudo mkdir /usr/share/fonts/winfonts
+
+# 复制windows上的字体到/usr
+sudo cp your_winfonts_dir /usr/share/fonts/winfonts 
+
+# 进入字体文件夹
+cd /usr/share/fonts/winfonts
+
+# 修改访问权限
+sudo chmod 744 *
+
+# 回到主目录
+cd ~
+
+# 更新字体信息
+sudo mkfontscale
+sudo mkfontdir
+sudo fc-cache -f -v                                                                          
+                    </code></pre>
+                </p>
+            
+
+                <h3 class="mt-5 mb-3">More</h3>
+                <p>
+                    See detail in these websites.
+                    </br>
+                    <a href='http://latexstudio.net/' target="_blank">LaTeX模板</a></br>
+                    <a href='http://github.com/Lucas-Wye/Latex_template' target="_blank">LaTeX模板</a>
+                                
+                </p>
+              
+            </div>
+
+            <!-- 翻页 -->
+            <nav class="blog-nav nav nav-justified my-5">
+              <a class="nav-link-prev nav-item nav-link rounded-left" href="14-ss.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+              <a class="nav-link-next nav-item nav-link rounded-right" href="#">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+            </nav>
+            
+            <div class="blog-comments-section">
+                <div id="disqus_thread"></div>
+                <script>					    
+                    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                        var d = document, s = d.createElement('script');					        
+                        // IMPORTANT: Replace 3wmthemes with your forum shortname!
+                        s.src = '';					        
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+
+                <noscript>
+                    Please enable JavaScript to view the 
+                    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                        comments powered by Disqus.
+                    </a>
+                </noscript>
+            </div><!--//blog-comments-section-->
+            
+        </div><!--//container-->
+    </article>

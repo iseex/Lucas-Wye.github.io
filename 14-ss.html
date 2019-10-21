@@ -111,95 +111,100 @@
             </div><!--//container-->
         </section>
         
-		<article class="blog-post px-3 py-5 p-md-5">
-                <div class="container">
-                    <header class="blog-post-header">
-                        <!-- 标题 -->
-                        <h2 class="title mb-2">Java</h2>
-                        <!-- 时间 -->
-                        <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
-                    </header>
-                    
-                    <div class="blog-post-body">
-                        <!-- 图片及描述 -->
-                        <!-- <figure class="blog-banner">
-                            <a href="#"><img class="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="image"></a>
-                            <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="#?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
-                        </figure> -->
-
-                        <!-- 摘要 -->
-                        <p>
-                            Java 是由Sun Microsystems公司于1995年5月推出的高级程序设计语言。 Java可运行于多个平台，如Windows, Mac OS，及其他多种UNIX版本的系统。
-                        </p>
-                        
-                        <h3 class="mt-5 mb-3">Install</h3>
-                        <p>
-                            <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">下载JDK</a></br>
-                            <a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA下载</a>
-                            <pre><code>
-# 配置环境变量                                
-export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_144  # 这里换成自己的jdk目录
-export JRE_HOME=${JAVA_HOME}/jre  
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
-export PATH=${JAVA_HOME}/bin:$PATH 
-                            </code></pre>
-                        </p>
-
-                        <h3 class="mt-5 mb-3">安卓adb</h3>
-                        <p>
-                            <pre><code>
-# 卸载系统软件
-adb shell
-pm list package
-pm uninstall -k --user 0 package_name
-                            </code></pre>
-                        </p>
 
 
-                        <!-- <h3 class="mt-5 mb-3">More</h3>
-                        <p>
-                            See detail in these websites.
-                            </br>
-                            <a href='https://blog.csdn.net/gatieme/article/details/51671430' target="_blank">more of gdb</a>
-                        </p> -->
-                      
-                    </div>
-
-                    <!-- 翻页 -->
-                    <nav class="blog-nav nav nav-justified my-5">
-                      <a class="nav-link-prev nav-item nav-link rounded-left" href="7-gcc.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                      <a class="nav-link-next nav-item nav-link rounded-right" href="9-docker.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
-                    </nav>
-                    
-                    <div class="blog-comments-section">
-                        <div id="disqus_thread"></div>
-                        <script>					    
-                            (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
-                                var d = document, s = d.createElement('script');					        
-                                // IMPORTANT: Replace 3wmthemes with your forum shortname!
-                                s.src = '';					        
-                                s.setAttribute('data-timestamp', +new Date());
-                                (d.head || d.body).appendChild(s);
-                            })();
-                        </script>
-    
-                        <noscript>
-                            Please enable JavaScript to view the 
-                            <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-                                comments powered by Disqus.
-                            </a>
-                        </noscript>
-                    </div><!--//blog-comments-section-->
-                    
-                </div><!--//container-->
-            </article>
+<article class="blog-post px-3 py-5 p-md-5">
+        <div class="container">
+            <header class="blog-post-header">
+                <!-- 标题 -->
+                <h2 class="title mb-2">SS</h2>
+                <!-- 时间 -->
+                <div class="meta mb-3"><span class="date">Updated: Oct 21st, 2019</span></div>
+            </header>
             
-    
-    
-    
-    
-    
-    
+            <div class="blog-post-body">
+                <!-- 图片及描述 -->
+                <!-- <figure class="blog-banner">
+                    <a href="#"><img class="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="image"></a>
+                    <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="#?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+                </figure> -->
+
+                <!-- 摘要 -->
+                <p>                   
+                    Shadowsocks（简称SS）是一種基於Socks5代理方式的加密傳輸协议，也可以指实现這個协议的各種开发包。</br>
+                    目前套件使用Python、C、C++、C#、Go语言、Rust等程式語言开发，大部分主要实现（iOS平台的除外）採用Apache许可证、GPL、MIT許可證等多種自由軟體許可協定開放原始碼。</br>
+                    Shadowsocks分为服务器端和客户端，在使用之前，需要先将服务器端程序部署到服务器上面，然后通过客户端连接并建立本地代理。
+                </p>
+                
+                <h3 class="mt-5 mb-3">Install</h3>
+                <p>
+                    <pre><code>
+# Ubuntu  
+sudo apt install shadowsocks                        
+                    </code></pre>
+                </p>
+
+                <h3 class="mt-5 mb-3">使用</h3>
+                <p>                  
+                    <pre><code>
+# 方法一                        
+# Edit the configuration file
+sudo vim /etc/shadowsocks-libev/config.json
+
+# Edit the default configuration for debian
+sudo vim /etc/default/shadowsocks-libev
+
+# Start the service
+sudo /etc/init.d/shadowsocks-libev start    # for sysvinit, or
+sudo systemctl start shadowsocks-libev      # for systemd    
+
+# 方法二
+ss-local -c /path/to/config.json                                                                            
+                    </code></pre>
+                </p>
+            
+
+                <h3 class="mt-5 mb-3">More</h3>
+                <p>
+                    See detail in these websites.
+                    </br>
+                    <a href='https://github.com/shadowsocksr-backup/shadowsocksr-libev/blob/master/README.md' target="_blank">安装教程</a></br>
+                    <a href='https://www.sundabao.com/ubuntu使用shadowsocks/' target="_blank">配置浏览器</a></br>
+                    <a href='https://blog.bbskali.cn/index.php/archives/1417/' target="_blank">其他</a>
+                    
+                </p>
+              
+            </div>
+
+            <!-- 翻页 -->
+            <nav class="blog-nav nav nav-justified my-5">
+              <a class="nav-link-prev nav-item nav-link rounded-left" href="13-go.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+              <a class="nav-link-next nav-item nav-link rounded-right" href="15-tex.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+            </nav>
+            
+            <div class="blog-comments-section">
+                <div id="disqus_thread"></div>
+                <script>					    
+                    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                        var d = document, s = d.createElement('script');					        
+                        // IMPORTANT: Replace 3wmthemes with your forum shortname!
+                        s.src = '';					        
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+
+                <noscript>
+                    Please enable JavaScript to view the 
+                    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                        comments powered by Disqus.
+                    </a>
+                </noscript>
+            </div><!--//blog-comments-section-->
+            
+        </div><!--//container-->
+    </article>
+
 </br></br></br></br>
 
         <footer class="footer text-center py-2 theme-bg-dark">

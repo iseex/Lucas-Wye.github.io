@@ -115,9 +115,9 @@
                 <div class="container">
                     <header class="blog-post-header">
                         <!-- 标题 -->
-                        <h2 class="title mb-2">Kali</h2>
+                        <h2 class="title mb-2">Tmux</h2>
                         <!-- 时间 -->
-                        <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
+                        <div class="meta mb-3"><span class="date">Updated: Oct 21st, 2019</span></div>
                     </header>
                     
                     <div class="blog-post-body">
@@ -129,70 +129,51 @@
 
                         <!-- 摘要 -->
                         <p>
-                            Kali Linux是基于Debian的Linux发行版， 设计用于数字取证操作系统。由Offensive Security Ltd维护和资助。最先由Offensive Security的Mati Aharoni和Devon Kearns通过重写BackTrack来完成，BackTrack是他们之前写的用于取证的Linux发行版。</br>
-                            Kali Linux预装了许多渗透测试软件，包括nmap 、Wireshark 、John the Ripper，以及Aircrack-ng；用户可通过硬盘、live CD或live USB运行Kali Linux。Kali Linux既有32位和64位的镜像。可用于x86 指令集。同时还有基于ARM架构的镜像，可用于树莓派和三星的ARM Chromebook。
+                            Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权。</br>
+                            使用它最直观的好处就是，通过一个终端登录远程主机并运行tmux后，在其中可以开启多个控制台而无需再“浪费”多余的终端来连接这台远程主机 ...
                         </p>
                         
                         <h3 class="mt-5 mb-3">Install</h3>
                         <p>
                             <pre><code>
-# 从Docker安装
-docker pull kalilinux/kali-linux-docker
-# 运行
-docker run -t -i kalilinux/kali-linux-docker /bin/bash
+# Ubuntu
+sudo apt-get install tmux
+# MacOS
+brew install tmux
                             </code></pre>
                         </p>
 
-                        <h3 class="mt-5 mb-3">设置镜像源</h3>
+                        <h3 class="mt-5 mb-3">基本操作</h3>
                         <p>
                             <pre><code>
-# 修改/etc/apt/source.list
-# 中科大
-deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
-deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
- 
-# 阿里云
-deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
-deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
- 
-# 清华
-deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free
-deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free
- 
-# 浙大
-deb http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free
-deb-src http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free
- 
-# 官方源
-deb http://http.kali.org/kali kali-rolling main non-free contrib
-deb-src http://http.kali.org/kali kali-rolling main non-free contrib
- 
-deb http://mirrors.163.com/debian/ jessie main non-free contrib
-deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib
-deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib
-deb-src http://mirrors.163.com/debian/ jessie main non-free contrib
-deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib
-deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib
-deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
-deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
+# 新建会话                                
+tmux # 新建一个无名称的会话
+tmux new -s demo # 新建一个名称为demo的会话
+# 进入之前会话
+tmux a # 默认进入第一个会话
+tmux a -t demo # 进入到名称为demo的会话
+# 关闭会话
+tmux kill-session -t demo # 关闭demo会话
+tmux kill-server # 关闭服务器，所有的会话都将关闭
+# 查看会话
+tmux list-session # 查看所有会话
+tmux ls # 查看所有会话，提倡使用简写形式
                             </code></pre>
                         </p>
-
-                      
-
+                    
                         <h3 class="mt-5 mb-3">More</h3>
                         <p>
                             See detail in these websites.
                             </br>
-                            <a href='https://www.kali.org/' target="_blank">kali官网</a>
+                            <a href='http://louiszhai.github.io/2017/09/30/tmux/' target="_blank">Tmux使用手册</a>
                         </p>
                       
                     </div>
 
                     <!-- 翻页 -->
                     <nav class="blog-nav nav nav-justified my-5">
-                      <a class="nav-link-prev nav-item nav-link rounded-left" href="9-docker.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                      <a class="nav-link-next nav-item nav-link rounded-right" href="11-tmux.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="10-kali.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="12-python.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
                     </nav>
                     
                     <div class="blog-comments-section">

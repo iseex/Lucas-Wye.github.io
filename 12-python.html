@@ -115,9 +115,9 @@
                 <div class="container">
                     <header class="blog-post-header">
                         <!-- 标题 -->
-                        <h2 class="title mb-2">Kali</h2>
+                        <h2 class="title mb-2">Python</h2>
                         <!-- 时间 -->
-                        <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
+                        <div class="meta mb-3"><span class="date">Updated: Oct 21st, 2019</span></div>
                     </header>
                     
                     <div class="blog-post-body">
@@ -129,70 +129,94 @@
 
                         <!-- 摘要 -->
                         <p>
-                            Kali Linux是基于Debian的Linux发行版， 设计用于数字取证操作系统。由Offensive Security Ltd维护和资助。最先由Offensive Security的Mati Aharoni和Devon Kearns通过重写BackTrack来完成，BackTrack是他们之前写的用于取证的Linux发行版。</br>
-                            Kali Linux预装了许多渗透测试软件，包括nmap 、Wireshark 、John the Ripper，以及Aircrack-ng；用户可通过硬盘、live CD或live USB运行Kali Linux。Kali Linux既有32位和64位的镜像。可用于x86 指令集。同时还有基于ARM架构的镜像，可用于树莓派和三星的ARM Chromebook。
+                            Python 是一种解释型、面向对象、动态数据类型的高级程序设计语言。 </br>
+                            Python 由 Guido van Rossum 于 1989 年底发明，第一个公开发行版发行于 1991 年。 </br>
+                            像 Perl 语言一样, Python 源代码同样遵循 GPL(GNU General Public License) 协议。
                         </p>
                         
                         <h3 class="mt-5 mb-3">Install</h3>
                         <p>
-                            <pre><code>
-# 从Docker安装
-docker pull kalilinux/kali-linux-docker
-# 运行
-docker run -t -i kalilinux/kali-linux-docker /bin/bash
-                            </code></pre>
+                            从<a href='https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/'>清华镜像源</a>下载对应平台的 anaconda/miniconda 安装即可。
                         </p>
 
-                        <h3 class="mt-5 mb-3">设置镜像源</h3>
+                        <h3 class="mt-5 mb-3">添加软件包下载镜像源</h3>
+                        <p>
+                            编辑~/.condarc文件
+                            <pre><code>
+channels:
+    - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+    - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+- defaults
+    show_channel_urls: true                                                              
+                            </code></pre>
+                        </p>
+                    
+                        <h3 class="mt-5 mb-3">conda创建python虚拟环境</h3>
                         <p>
                             <pre><code>
-# 修改/etc/apt/source.list
-# 中科大
-deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
-deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
- 
-# 阿里云
-deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
-deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
- 
-# 清华
-deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free
-deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free
- 
-# 浙大
-deb http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free
-deb-src http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free
- 
-# 官方源
-deb http://http.kali.org/kali kali-rolling main non-free contrib
-deb-src http://http.kali.org/kali kali-rolling main non-free contrib
- 
-deb http://mirrors.163.com/debian/ jessie main non-free contrib
-deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib
-deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib
-deb-src http://mirrors.163.com/debian/ jessie main non-free contrib
-deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib
-deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib
-deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
-deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
+# 查看当前存在哪些虚拟环境                                
+conda env list  
+conda info -e 
+# 创建虚拟环境
+conda create -n your_env_name python=X.X  # 版本选择：2.7、3.6等
+# 激活环境
+conda activate your_env_name
+# 安装package到your_env_name
+conda install -n your_env_name [package]
+# 关闭虚拟环境
+conda deactivate
+# 删除虚拟环境
+conda remove -n your_env_name --all
+# 删除环境中的某个包
+conda remove --name your_env_name package_name
+                            </code></pre>                             
+                        </p>
+
+
+                        <h3 class="mt-5 mb-3">常用包安装方法</h3>
+                        <p>
+                            <pre><code>
+# tensorflow
+conda install tensorflow
+# pytorch(CPU)
+conda install pytorch torchvision cpuonly -c pytorch
+
                             </code></pre>
                         </p>
 
-                      
+                        <h3 class="mt-5 mb-3">Jupyter notebook</h3>
+                        <p>
+                            默认情况下，安装好 Anaconda 后打开 jupyter notebook, 访问本地 localhost:8888 即可。</br>
+                            但是如果要访问另一台机器，比如远端服务器上的 notebook, 即默认是不支持 ip addr:8888 的访问，需要额外配置。
+                            <pre><code>
+# 生成一个 notebook 配置文件
+# 默认情况下,配置文件 ~/.jupyter/jupyter_notebook_config.py 并不存在
+jupyter notebook --generate-config
+# 生成密码
+jupyter notebook password
+# 修改配置文件 ～/.jupyter/jupyter_notebook_config.py
+c.NotebookApp.ip = '*' # 允许任何IP访问
+c.NotebookApp.password = u'sha:...' # 密码的哈希值
+c.NotebookApp.open_browser = False 
+c.NotebookApp.port = 8888 # 自行指定一个端口
+                            </code></pre>
+                        </p>
+
 
                         <h3 class="mt-5 mb-3">More</h3>
                         <p>
                             See detail in these websites.
                             </br>
-                            <a href='https://www.kali.org/' target="_blank">kali官网</a>
+                            <a href='http://nbviewer.jupyter.org' target="_blank">ipynb文件在线查看工具</a>
                         </p>
                       
                     </div>
 
                     <!-- 翻页 -->
                     <nav class="blog-nav nav nav-justified my-5">
-                      <a class="nav-link-prev nav-item nav-link rounded-left" href="9-docker.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                      <a class="nav-link-next nav-item nav-link rounded-right" href="11-tmux.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="11-tmux.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="13-go.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
                     </nav>
                     
                     <div class="blog-comments-section">

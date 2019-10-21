@@ -3,9 +3,9 @@
                 <div class="container">
                     <header class="blog-post-header">
                         <!-- 标题 -->
-                        <h2 class="title mb-2">Java</h2>
+                        <h2 class="title mb-2">Tmux</h2>
                         <!-- 时间 -->
-                        <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
+                        <div class="meta mb-3"><span class="date">Updated: Oct 21st, 2019</span></div>
                     </header>
                     
                     <div class="blog-post-body">
@@ -17,46 +17,51 @@
 
                         <!-- 摘要 -->
                         <p>
-                            Java 是由Sun Microsystems公司于1995年5月推出的高级程序设计语言。 Java可运行于多个平台，如Windows, Mac OS，及其他多种UNIX版本的系统。
+                            Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权。</br>
+                            使用它最直观的好处就是，通过一个终端登录远程主机并运行tmux后，在其中可以开启多个控制台而无需再“浪费”多余的终端来连接这台远程主机 ...
                         </p>
                         
                         <h3 class="mt-5 mb-3">Install</h3>
                         <p>
-                            <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">下载JDK</a></br>
-                            <a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA下载</a>
                             <pre><code>
-# 配置环境变量                                
-export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_144  # 这里换成自己的jdk目录
-export JRE_HOME=${JAVA_HOME}/jre  
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
-export PATH=${JAVA_HOME}/bin:$PATH 
+# Ubuntu
+sudo apt-get install tmux
+# MacOS
+brew install tmux
                             </code></pre>
                         </p>
 
-                        <h3 class="mt-5 mb-3">安卓adb</h3>
+                        <h3 class="mt-5 mb-3">基本操作</h3>
                         <p>
                             <pre><code>
-# 卸载系统软件
-adb shell
-pm list package
-pm uninstall -k --user 0 package_name
+# 新建会话                                
+tmux # 新建一个无名称的会话
+tmux new -s demo # 新建一个名称为demo的会话
+# 进入之前会话
+tmux a # 默认进入第一个会话
+tmux a -t demo # 进入到名称为demo的会话
+# 关闭会话
+tmux kill-session -t demo # 关闭demo会话
+tmux kill-server # 关闭服务器，所有的会话都将关闭
+# 查看会话
+tmux list-session # 查看所有会话
+tmux ls # 查看所有会话，提倡使用简写形式
                             </code></pre>
                         </p>
-
-
-                        <!-- <h3 class="mt-5 mb-3">More</h3>
+                    
+                        <h3 class="mt-5 mb-3">More</h3>
                         <p>
                             See detail in these websites.
                             </br>
-                            <a href='https://blog.csdn.net/gatieme/article/details/51671430' target="_blank">more of gdb</a>
-                        </p> -->
+                            <a href='http://louiszhai.github.io/2017/09/30/tmux/' target="_blank">Tmux使用手册</a>
+                        </p>
                       
                     </div>
 
                     <!-- 翻页 -->
                     <nav class="blog-nav nav nav-justified my-5">
-                      <a class="nav-link-prev nav-item nav-link rounded-left" href="7-gcc.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                      <a class="nav-link-next nav-item nav-link rounded-right" href="9-docker.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                      <a class="nav-link-prev nav-item nav-link rounded-left" href="10-kali.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                      <a class="nav-link-next nav-item nav-link rounded-right" href="12-python.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
                     </nav>
                     
                     <div class="blog-comments-section">
@@ -81,10 +86,3 @@ pm uninstall -k --user 0 package_name
                     
                 </div><!--//container-->
             </article>
-            
-    
-    
-    
-    
-    
-    

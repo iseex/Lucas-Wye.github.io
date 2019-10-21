@@ -1,0 +1,93 @@
+
+
+
+<article class="blog-post px-3 py-5 p-md-5">
+        <div class="container">
+            <header class="blog-post-header">
+                <!-- 标题 -->
+                <h2 class="title mb-2">Go</h2>
+                <!-- 时间 -->
+                <div class="meta mb-3"><span class="date">Updated: Oct 21st, 2019</span></div>
+            </header>
+            
+            <div class="blog-post-body">
+                <!-- 图片及描述 -->
+                <!-- <figure class="blog-banner">
+                    <a href="#"><img class="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="image"></a>
+                    <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="#?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+                </figure> -->
+
+                <!-- 摘要 -->
+                <p>                   
+                    Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。</br>
+                    Go是从2007年末由Robert Griesemer, Rob Pike, Ken Thompson主持开发，后来还加入了Ian Lance Taylor, Russ Cox等人，并最终于2009年11月开源，在2012年早些时候发布了Go 1稳定版本。</br>
+                    现在Go的开发已经是完全开放的，并且拥有一个活跃的社区。
+                </p>
+                
+                <h3 class="mt-5 mb-3">Install</h3>
+                <p>
+                    从<a href='https://golang.google.cn/dl/'>此网站</a>下载对应平台的编译器安装即可。
+                </p>
+
+                <h3 class="mt-5 mb-3">设置国内代理</h3>
+                <p>                  
+                    <pre><code>
+go env -w GOPROXY=https://goproxy.cn,direct                                                                               
+                    </code></pre>
+                </p>
+            
+                <h3 class="mt-5 mb-3">设置环境变量</h3>
+                <p>
+                    <pre><code>
+# Golang
+export GO=... # 安装位置
+export PATH=$PATH:$GO/bin
+
+export GOPATH=... # 指定一个本地位置
+export PATH=$PATH:$GOPATH/bin
+                    </code></pre>                             
+                </p>
+
+
+                <h3 class="mt-5 mb-3">More</h3>
+                <p>
+                    See detail in these websites.
+                    </br>
+                    <a href='https://www.runoob.com/go/go-tutorial.html' target="_blank">go教程</a></br>
+                    <a href='https://www.w3cschool.cn/yqbmht/' target="_blank">go web教程</a></br>
+                    <a href='https://github.com/goproxy/goproxy.cn/issues/29' target="_blank">设置GOPROXY还是无法下载解决方案</a></br>
+                    <a href='https://beego.me' target="_blank">beego框架</a>
+
+                    
+                </p>
+              
+            </div>
+
+            <!-- 翻页 -->
+            <nav class="blog-nav nav nav-justified my-5">
+              <a class="nav-link-prev nav-item nav-link rounded-left" href="12-python.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+              <a class="nav-link-next nav-item nav-link rounded-right" href="14-ss.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+            </nav>
+            
+            <div class="blog-comments-section">
+                <div id="disqus_thread"></div>
+                <script>					    
+                    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                        var d = document, s = d.createElement('script');					        
+                        // IMPORTANT: Replace 3wmthemes with your forum shortname!
+                        s.src = '';					        
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+
+                <noscript>
+                    Please enable JavaScript to view the 
+                    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                        comments powered by Disqus.
+                    </a>
+                </noscript>
+            </div><!--//blog-comments-section-->
+            
+        </div><!--//container-->
+    </article>
