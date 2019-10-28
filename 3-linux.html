@@ -115,7 +115,7 @@
             <div class="container">
                 <header class="blog-post-header">
                     <!-- 标题 -->
-                    <h2 class="title mb-2">Linux命令</h2>
+                    <h2 class="title mb-2">Linux</h2>
                     <!-- 时间 -->
                     <div class="meta mb-3"><span class="date">Updated: Oct 16th, 2019</span></div>
                 </header>
@@ -280,7 +280,16 @@ umask # set in startup files for the account to masks out permissions.
 # umask numbers added to desired permission number equals 7.
 
 chgrp # change the group of the file
-chown # change the owner of a file                            
+chown # change the owner of a file 
+
+# 查看当前目录文件大小
+# 方法一
+# 列出当前目录下每个文件的大小，同时也会给出当前目录下所有文件大小总和
+ls -lht
+
+# 方法二
+# 列出当前文件夹下所有文件对应的大小，把*替换为具体的文件名，会给出具体文件的大小
+du -sh *
                         </code></pre>  
 
                         (8)Link
