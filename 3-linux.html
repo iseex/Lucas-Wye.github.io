@@ -414,6 +414,11 @@ stderr: 2 </br>
                                     <td>append stdout and stderr to file</td>
                                 </tr>
 
+                                <tr>
+                                    <td>&lt;command&gt; 2&gt;&1 | tee <logfile></td>
+                                    <td>将stderr和stdout输出到文件的同时在屏幕上输出</td>
+                                </tr>
+
                         </table>
                     </br>
                         (19)阻止软件包更新
@@ -433,22 +438,16 @@ export http_proxy=http://127.0.0.1:1087
 export https_proxy=http://127.0.0.1:1087
                         </code></pre>
 
-                        (22)tmux分屏工具
+                        (22)挂载硬盘
                         <pre><code>
-# 终端环境查看会话列表
-tmux ls 
-
-# 垂直分屏
-ctrl+b % 
-
-# 水平分屏
-ctrl+b " 
-
-# 根据按箭方向选择切换到某个pane。
-ctrl+b Up|Down|Left|Right 
-# 滚屏
-# 要进入copy-mode，即PREFIX+[，然后就可以用上下键来滚动屏幕，配置了vi快捷键模式，
-# 就可以像操作vi一样来滚动屏幕，非常的方便。退出直接按‘q’键即可。
+# 查看硬盘信息
+fdisk -l   
+# 挂载硬盘到某个文件夹
+sudo mount /dev/sda /your/path
+# 查看硬盘挂载信息
+df -h
+# 取消挂载
+sudo umount /your/path
                         </code></pre>
                         (23)实现对Exfat文件系统支持
                         <pre><code>
@@ -470,9 +469,6 @@ gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,max
                     </p>
                   
                 </div>
-
-
-
 
 
                 <!-- 翻页 -->

@@ -26,6 +26,7 @@
                 
                 <h3 class="mt-5 mb-3">Install</h3>
                 <p>
+                    <h4>方法一</h4>
                     从<a href='https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/'>清华镜像源</a>下载对应操作系统的Texlive软件包
                     <pre><code>
 # 安装
@@ -37,7 +38,38 @@ export PATH=$PATH:$TEX_HOME/bin/x86_64-linux
 export INFOPATH=$INFOPATH:$TEX_HOME/texmf-dist/doc/info
 export MANPATH=$MANPATH:$TEX_HOME/texmf-dist/doc/man                  
                     </code></pre>
+                
+
+                    <h4>方法二</h4>
+                    用docker安装
+                    <pre><code>
+# 拉取镜像                    
+sudo docker pull ubuntu:18.04
+sudo docker run -it --rm ubuntu:18.04 bash
+# 在镜像内操作
+echo "deb http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse
+deb http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse
+deb http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse
+deb http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse
+deb-src http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse
+deb-src http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse
+deb-src http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse
+deb-src http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse" > /etc/apt/sources.list
+apt update
+# 安装texlive
+apt install texlive-full
+
+# 保存镜像
+docker ps
+docker commit "刚刚安装的镜像" ubuntu-texlive
+
+# 将本地的 /home/x/tex 挂载到镜像中的 /latex 目录
+docker run -it -v /home/x/tex:/latex ubuntu-latex /bin/bash
+
+                    </code></pre>
                 </p>
+
+                
 
                 <h3 class="mt-5 mb-3">安装 Windows 字体</h3>
                 <p>                  
@@ -69,7 +101,7 @@ sudo fc-cache -f -v
                 <p>
                     See detail in these websites.
                     </br>
-                    <a href='http://latexstudio.net/' target="_blank">LaTeX模板</a></br>
+                    <a href='http://latexstudio.net/' target="_blank">LaTeX开源小屋</a></br>
                     <a href='http://github.com/Lucas-Wye/Latex_template' target="_blank">LaTeX模板</a>
                                 
                 </p>

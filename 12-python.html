@@ -185,6 +185,14 @@ conda install pytorch torchvision cpuonly -c pytorch
                             </code></pre>
                         </p>
 
+                        <h3 class="mt-5 mb-3">conda导出环境依赖</h3>
+                        <p>
+                            <pre><code>
+conda list -e > requirements.txt
+
+                            </code></pre>
+                        </p>
+
                         <h3 class="mt-5 mb-3">Jupyter notebook</h3>
                         <p>
                             默认情况下，安装好 Anaconda 后打开 jupyter notebook, 访问本地 localhost:8888 即可。</br>
@@ -200,6 +208,18 @@ c.NotebookApp.ip = '*' # 允许任何IP访问
 c.NotebookApp.password = u'sha:...' # 密码的哈希值
 c.NotebookApp.open_browser = False 
 c.NotebookApp.port = 8888 # 自行指定一个端口
+                            </code></pre>
+                            <h4>添加多种环境</h4>
+                            <pre><code>
+# 进入每个虚拟环境
+conda activate env_name
+conda install ipykernel
+# 退出该虚拟环境
+conda activate base
+# 然后再将这个kernal添加到jupyter里面，NAME为自己取的环境名字
+python -m ipykernel install --user --name NAME --display-name "NAME"
+# 查看已有的kernels
+cd ~/.local/share/jupyter/kernels                                
                             </code></pre>
                         </p>
 
