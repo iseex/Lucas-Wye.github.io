@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Welcome to Wye's space!</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+
+    <meta name="author" content="Lucas-Wye">
+    <meta name="application-name" content="notebook">
+    <meta name="keywords" content="linux学习，mac教程，Hello, welcome to my personal website">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="This is a website for personal learning progress and some successful or interesting things." />
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="no-cache" />
+
+
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+        
+    <!-- 代码高亮主题 CSS -->
+    <link rel="stylesheet" href="assets/plugins/highlight/styles/atom-one-light.css">
+
+
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+           
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- 代码高亮脚本 JS -->
+    <script src="assets/plugins/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="assets/js/demo/style-switcher.js"></script>  
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?287f36c0e54c2fac254948fb0a9b18e0";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+        <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Wye's Space</a></h1>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark" >
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navigation" class="collapse navbar-collapse flex-column" >
+                <div class="profile-section pt-3 pt-lg-0">
+                    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >			
+                    
+                    <div class="bio mb-3">Hello, welcome to Wye's space. This is a website for personal learning notes and some interesting things.</div><!--//bio-->
+                    <ul class="social-list list-inline py-3 mx-auto">
+                        <li class="list-inline-item"><a href="https://github.com/Lucas-Wye"><i class="fab fa-github-alt fa-fw"></i></a></li>
+                    </ul><!--//social-list-->
+                    <hr> 
+                </div><!--//profile-section-->
+                
+                <ul class="navbar-nav flex-column text-left">
+                    <!-- ft动画 -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Home<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <!-- 技术贴 -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="note-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Note</a>
+                    </li>
+
+
+                </ul>
+
+                <div class="my-2 my-md-3">
+                    <a class="btn btn-primary" href="mailto:lustrew@foxmail.com" target="_blank">Get in Touch</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+        <section class="cta-section theme-bg-light py-5">
+            <div class="container text-center">
+                <h2 class="heading">Enjoy yourselves!</h2>
+                <div class="intro">Life is hard, just be happy!</div>
+                <div class="intro">Welcome! Here you can find a lots of interesting things.</div>
+            </div><!--//container-->
+        </section>
+        
+
+
+<article class="blog-post px-3 py-5 p-md-5">
+    <div class="container">
+        <header class="blog-post-header">
+            <!-- 标题 -->
+            <h2 class="title mb-2">搭建自己的搜索服务</h2>
+            <!-- 时间 -->
+            <div class="meta mb-3"><span class="date">Updated: Nov 3rd, 2019</span></div>
+        </header>
+        
+        <div class="blog-post-body">
+            <!-- 图片及描述 -->
+            <!-- <figure class="blog-banner">
+                <a href="#"><img class="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="image"></a>
+                <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="#?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+            </figure> -->
+
+            <!-- 摘要 -->
+            <p>                   
+                当前可用的搜索引擎存在很多不足，在此提供一种方便的搭载方法...                 
+            </p>
+            
+            <h3 class="mt-5 mb-3">方法</h3>
+            <p>
+                
+                在<a href='https://workers.cloudflare.com/'>cloudflare上</a>注册一个账号</br>
+                然后写入下面代码，保存并发布
+                <pre><code>
+'use strict'
+
+/**
+    * static files (404.html, sw.js, conf.js)
+    */
+const ASSET_URL = 'https://etherdream.github.io/jsproxy'
+
+const JS_VER = 10
+const MAX_RETRY = 1
+
+/** @type {RequestInit} */
+const PREFLIGHT_INIT = {
+    status: 204,
+    headers: new Headers({
+    'access-control-allow-origin': '*',
+    'access-control-allow-methods': 'GET,POST,PUT,PATCH,TRACE,DELETE,HEAD,OPTIONS',
+    'access-control-max-age': '1728000',
+    }),
+}
+
+/**
+    * @param {any} body
+    * @param {number} status
+    * @param {Object<string, string>} headers
+    */
+function makeRes(body, status = 200, headers = {}) {
+    headers['--ver'] = JS_VER
+    headers['access-control-allow-origin'] = '*'
+    return new Response(body, {status, headers})
+}
+
+
+/**
+    * @param {string} urlStr 
+    */
+function newUrl(urlStr) {
+    try {
+    return new URL(urlStr)
+    } catch (err) {
+    return null
+    }
+}
+
+
+addEventListener('fetch', e => {
+    const ret = fetchHandler(e)
+    .catch(err => makeRes('cfworker error:\n' + err.stack, 502))
+    e.respondWith(ret)
+})
+
+
+/**
+    * @param {FetchEvent} e 
+    */
+async function fetchHandler(e) {
+    const req = e.request
+    const urlStr = req.url
+    const urlObj = new URL(urlStr)
+    const path = urlObj.href.substr(urlObj.origin.length)
+
+    if (urlObj.protocol === 'http:') {
+    urlObj.protocol = 'https:'
+    return makeRes('', 301, {
+        'strict-transport-security': 'max-age=99999999; includeSubDomains; preload',
+        'location': urlObj.href,
+    })
+    }
+
+    if (path.startsWith('/http/')) {
+    return httpHandler(req, path.substr(6))
+    }
+
+    switch (path) {
+    case '/http':
+    return makeRes('请更新 cfworker 到最新版本!')
+    case '/ws':
+    return makeRes('not support', 400)
+    case '/works':
+    return makeRes('it works')
+    default:
+    // static files
+    return fetch(ASSET_URL + path)
+    }
+}
+
+
+/**
+    * @param {Request} req
+    * @param {string} pathname
+    */
+function httpHandler(req, pathname) {
+    const reqHdrRaw = req.headers
+    if (reqHdrRaw.has('x-jsproxy')) {
+    return Response.error()
+    }
+
+    // preflight
+    if (req.method === 'OPTIONS' &&
+        reqHdrRaw.has('access-control-request-headers')
+    ) {
+    return new Response(null, PREFLIGHT_INIT)
+    }
+
+    let acehOld = false
+    let rawSvr = ''
+    let rawLen = ''
+    let rawEtag = ''
+
+    const reqHdrNew = new Headers(reqHdrRaw)
+    reqHdrNew.set('x-jsproxy', '1')
+
+    // 此处逻辑和 http-dec-req-hdr.lua 大致相同
+    // https://github.com/EtherDream/jsproxy/blob/master/lua/http-dec-req-hdr.lua
+    const refer = reqHdrNew.get('referer')
+    const query = refer.substr(refer.indexOf('?') + 1)
+    if (!query) {
+    return makeRes('missing params', 403)
+    }
+    const param = new URLSearchParams(query)
+
+    for (const [k, v] of Object.entries(param)) {
+    if (k.substr(0, 2) === '--') {
+        // 系统信息
+        switch (k.substr(2)) {
+        case 'aceh':
+        acehOld = true
+        break
+        case 'raw-info':
+        [rawSvr, rawLen, rawEtag] = v.split('|')
+        break
+        }
+    } else {
+        // 还原 HTTP 请求头
+        if (v) {
+        reqHdrNew.set(k, v)
+        } else {
+        reqHdrNew.delete(k)
+        }
+    }
+    }
+    if (!param.has('referer')) {
+    reqHdrNew.delete('referer')
+    }
+
+    // cfworker 会把路径中的 `//` 合并成 `/`
+    const urlStr = pathname.replace(/^(https?):\/+/, '$1://')
+    const urlObj = newUrl(urlStr)
+    if (!urlObj) {
+    return makeRes('invalid proxy url: ' + urlStr, 403)
+    }
+
+    /** @type {RequestInit} */
+    const reqInit = {
+    method: req.method,
+    headers: reqHdrNew,
+    redirect: 'manual',
+    }
+    if (req.method === 'POST') {
+    reqInit.body = req.body
+    }
+    return proxy(urlObj, reqInit, acehOld, rawLen, 0)
+}
+
+
+/**
+    * 
+    * @param {URL} urlObj 
+    * @param {RequestInit} reqInit 
+    * @param {number} retryTimes 
+    */
+async function proxy(urlObj, reqInit, acehOld, rawLen, retryTimes) {
+    const res = await fetch(urlObj.href, reqInit)
+    const resHdrOld = res.headers
+    const resHdrNew = new Headers(resHdrOld)
+
+    let expose = '*'
+    
+    for (const [k, v] of resHdrOld.entries()) {
+    if (k === 'access-control-allow-origin' ||
+        k === 'access-control-expose-headers' ||
+        k === 'location' ||
+        k === 'set-cookie'
+    ) {
+        const x = '--' + k
+        resHdrNew.set(x, v)
+        if (acehOld) {
+        expose = expose + ',' + x
+        }
+        resHdrNew.delete(k)
+    }
+    else if (acehOld &&
+        k !== 'cache-control' &&
+        k !== 'content-language' &&
+        k !== 'content-type' &&
+        k !== 'expires' &&
+        k !== 'last-modified' &&
+        k !== 'pragma'
+    ) {
+        expose = expose + ',' + k
+    }
+    }
+
+    if (acehOld) {
+    expose = expose + ',--s'
+    resHdrNew.set('--t', '1')
+    }
+
+    // verify
+    if (rawLen) {
+    const newLen = resHdrOld.get('content-length') || ''
+    const badLen = (rawLen !== newLen)
+
+    if (badLen) {
+        if (retryTimes < MAX_RETRY) {
+        urlObj = await parseYtVideoRedir(urlObj, newLen, res)
+        if (urlObj) {
+            return proxy(urlObj, reqInit, acehOld, rawLen, retryTimes + 1)
+        }
+        }
+        return makeRes(res.body, 400, {
+        '--error': `bad len: ${newLen}, except: ${rawLen}`,
+        'access-control-expose-headers': '--error',
+        })
+    }
+
+    if (retryTimes > 1) {
+        resHdrNew.set('--retry', retryTimes)
+    }
+    }
+
+    let status = res.status
+
+    resHdrNew.set('access-control-expose-headers', expose)
+    resHdrNew.set('access-control-allow-origin', '*')
+    resHdrNew.set('--s', status)
+    resHdrNew.set('--ver', JS_VER)
+
+    resHdrNew.delete('content-security-policy')
+    resHdrNew.delete('content-security-policy-report-only')
+    resHdrNew.delete('clear-site-data')
+
+    if (status === 301 ||
+        status === 302 ||
+        status === 303 ||
+        status === 307 ||
+        status === 308
+    ) {
+    status = status + 10
+    }
+
+    return new Response(res.body, {
+    status,
+    headers: resHdrNew,
+    })
+}
+
+
+/**
+    * @param {URL} urlObj 
+    */
+function isYtUrl(urlObj) {
+    return (
+    urlObj.host.endsWith('.googlevideo.com') &&
+    urlObj.pathname.startsWith('/videoplayback')
+    )
+}
+
+/**
+    * @param {URL} urlObj 
+    * @param {number} newLen 
+    * @param {Response} res 
+    */
+async function parseYtVideoRedir(urlObj, newLen, res) {
+    if (newLen > 2000) {
+    return null
+    }
+    if (!isYtUrl(urlObj)) {
+    return null
+    }
+    try {
+    const data = await res.text()
+    urlObj = new URL(data)
+    } catch (err) {
+    return null
+    }
+    if (!isYtUrl(urlObj)) {
+    return null
+    }
+    return urlObj
+}
+                </code></pre>
+            </p>
+
+        
+            <h3 class="mt-5 mb-3">测试</h3>
+            访问生成的网站即可。
+    
+          
+        </div>
+
+        <!-- 翻页 -->
+        <nav class="blog-nav nav nav-justified my-5">
+          <a class="nav-link-prev nav-item nav-link rounded-left" href="15-tex.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+          <a class="nav-link-next nav-item nav-link rounded-right" href="#">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+        </nav>
+        
+        <div class="blog-comments-section">
+            <div id="disqus_thread"></div>
+            <script>					    
+                (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                    var d = document, s = d.createElement('script');					        
+                    // IMPORTANT: Replace 3wmthemes with your forum shortname!
+                    s.src = '';					        
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+
+            <noscript>
+                Please enable JavaScript to view the 
+                <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                    comments powered by Disqus.
+                </a>
+            </noscript>
+        </div><!--//blog-comments-section-->
+        
+    </div><!--//container-->
+</article>
+
+</br></br></br></br>
+
+        <footer class="footer text-center py-2 theme-bg-dark">
+            <small class="copyright">                           
+                Designed by <a href="https://3rdwavemedia.com">3rdwavemedia</a>;  &nbspCopyright©Wye, 2019
+            <small>
+        </footer>
+	
+	</div><!--//main-wrapper-->
+
+</body>
+</html> 
