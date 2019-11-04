@@ -111,6 +111,24 @@ cd ~/.local/share/jupyter/kernels
                             </code></pre>
                         </p>
 
+                        <h3 class="mt-5 mb-3">pip</h3>
+                        <p>
+                            <pre><code>
+# 导入依赖包                                
+pip install -r requirements.txt    
+# 导出依赖包
+pip freeze > requirements.txt
+# 离线下载
+pip download -d [DIR] -r requirements.txt 
+# 离线安装
+pip install --no-index --find-links=[DIR] -r requirements.txt  
+
+# 更改镜像源
+echo "[global]\nindex-url = http://mirrors.aliyun.com/pypi/simple/\n[install]\ntrusted-host = mirrors.aliyun.com" > ~/.pip/pip.conf
+                            </code></pre>
+
+                        </p>
+
 
                         <h3 class="mt-5 mb-3">More</h3>
                         <p>
